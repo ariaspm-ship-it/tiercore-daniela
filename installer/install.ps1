@@ -30,7 +30,7 @@ try {
 Write-Host "`n📦 Instalando Chocolatey..." -ForegroundColor Yellow
 Set-ExecutionPolicy Bypass -Scope Process -Force
 [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072
-iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 refreshenv
 
 # 4. Instalar dependencias
@@ -40,10 +40,10 @@ refreshenv
 
 # 5. Clonar repositorio
 Write-Host "`n📦 Descargando Daniela..." -ForegroundColor Yellow
-$repoUrl = "https://github.com/tiercore/daniela.git"
+$repoUrl = "https://github.com/ariaspm-ship-it/tiercore-daniela.git"
 $installPath = "$env:USERPROFILE\daniela"
 git clone $repoUrl $installPath
-cd $installPath
+Set-Location $installPath
 
 # 6. Instalar NUT (Network UPS Tools)
 Write-Host "`n📦 Configurando lector de UPS..." -ForegroundColor Yellow
