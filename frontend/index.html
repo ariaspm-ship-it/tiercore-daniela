@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daniela - TierCore</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <div class="logo">
+        <h1>TIERCORE</h1>
+        <span class="product">DANIELA</span>
+      </div>
+      <div class="status">
+        <span class="indicator online"></span>
+        <span id="connection-status">Conectado</span>
+      </div>
+    </header>
+
+    <!-- Dashboard principal -->
+    <div class="dashboard">
+      <!-- UPS principal -->
+      <div class="ups-card" id="ups-main">
+        <div class="ups-header">
+          <h2>UPS-01 <span class="location">(Oficina)</span></h2>
+          <span class="badge online">ONLINE</span>
+        </div>
+        <div class="ups-details">
+          <div class="meter">
+            <label>Carga</label>
+            <div class="progress-bar">
+              <div class="progress-fill" id="load-bar" style="width: 0%"></div>
+            </div>
+            <span class="value" id="load-value">0%</span>
+          </div>
+          <div class="meter">
+            <label>Batería</label>
+            <div class="progress-bar">
+              <div class="progress-fill" id="battery-bar" style="width: 0%"></div>
+            </div>
+            <span class="value" id="battery-value">0%</span>
+          </div>
+          <div class="row">
+            <div class="metric">
+              <span class="label">Temperatura</span>
+              <span class="value" id="temperature">--°C</span>
+            </div>
+            <div class="metric">
+              <span class="label">Autonomía</span>
+              <span class="value" id="runtime">--min</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="metric">
+              <span class="label">Voltaje entrada</span>
+              <span class="value" id="input-voltage">--V</span>
+            </div>
+            <div class="metric">
+              <span class="label">Voltaje batería</span>
+              <span class="value" id="battery-voltage">--V</span>
+            </div>
+          </div>
+          <div class="health-indicator">
+            <span class="label">Salud batería</span>
+            <span class="value" id="health-value">--%</span>
+            <div class="health-bar">
+              <div class="health-fill" id="health-bar" style="width: 0%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Alertas -->
+      <div class="alerts-panel">
+        <h3>🔔 Alertas activas</h3>
+        <div id="alerts-list">
+          <div class="alert loading">Cargando alertas...</div>
+        </div>
+      </div>
+
+      <!-- Gráfica histórica -->
+      <div class="chart-container">
+        <h3>📈 Historial carga últimas 24h</h3>
+        <canvas id="load-chart"></canvas>
+      </div>
+
+      <!-- Panel de IA -->
+      <div class="ia-panel">
+        <h3>🤖 Daniela dice:</h3>
+        <div id="ia-message" class="ia-message">
+          Conectando con el UPS...
+        </div>
+        <div class="predictions" id="predictions">
+          <!-- Se llena con JS -->
+        </div>
+      </div>
+
+      <!-- Registro de cambios -->
+      <div class="battery-log">
+        <h3>📅 Registro baterías</h3>
+        <button onclick="showBatteryForm()">+ Registrar cambio</button>
+        <div id="battery-history">
+          <p class="note">No hay cambios registrados</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal registro baterías -->
+  <div id="battery-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h3>Registrar cambio de baterías</h3>
+      <form id="battery-form">
+        <label>Fecha del cambio</label>
+        <input type="date" id="change-date" required>
+                
+        <label>Tipo de batería</label>
+        <select id="battery-type">
+          <option value="plomo-acido">Plomo-ácido</option>
+          <option value="litio">Litio</option>
+          <option value="nicd">NiCd</option>
+        </select>
+                
+        <label>Notas (opcional)</label>
+        <textarea id="notes" rows="3"></textarea>
+                
+        <button type="submit">Guardar</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>

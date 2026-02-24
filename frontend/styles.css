@@ -1,0 +1,4 @@
+body { font-family: Arial, sans-serif; background:#f7f7f8; color:#222; }
+.container { max-width: 800px; margin: 36px auto; padding: 18px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+pre { background:#f0f0f0; padding:12px; overflow:auto; }
+#status { margin-bottom: 12px; font-weight:600; }
