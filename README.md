@@ -11,3 +11,21 @@
 	irm https://tiercore.run/windows | iex
 	```
 
+## 🛠 Scripts de operación (Windows)
+
+Desde la raíz del proyecto:
+
+```powershell
+# Instalación inicial
+powershell -ExecutionPolicy Bypass -File .\installer\install.ps1
+
+# Actualizar código y servicios
+powershell -ExecutionPolicy Bypass -File .\installer\update.ps1
+
+# Verificar estado de servicios
+powershell -ExecutionPolicy Bypass -File .\installer\healthcheck.ps1
+
+# Desinstalar (con confirmación)
+powershell -ExecutionPolicy Bypass -File .\installer\uninstall.ps1
+```
+
