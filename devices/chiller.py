@@ -42,7 +42,8 @@ class Chiller:
         if len(self.history) > 1000:
             self.history = self.history[-1000:]
         
-        devices_logger.debug(f"Chiller {self.id} actualizado: {data.cop:.2f} COP")
+        cop_text = f"{data.cop:.2f}" if data.cop is not None else "N/A"
+        devices_logger.debug(f"Chiller {self.id} actualizado: {cop_text} COP")
     
     def calculate_cop(self, temp_supply, temp_return, flow_m3h, power_kw):
         """Calcula COP si no viene directamente"""

@@ -7,6 +7,7 @@ from datetime import datetime, timedelta
 from typing import Dict, Optional
 
 from core.logger import simulator_logger
+from core.database import db
 from devices.chiller import Chiller, ChillerData
 from devices.villa import Villa, VillaData
 from devices.heat_machine import HeatMachine, HeatMachineData
@@ -25,11 +26,15 @@ class ResortSimulator:
     Versión completa con todos los puntos BMS (~2.100 puntos lógicos)
     """
 
-    def __init__(self):
+    def __init__(self, persist_to_db: bool = True):
         self.habitaciones = generar_habitaciones()
         self.villas = generar_villas()
         self.edificios = crear_edificios()
         self.paneles = crear_paneles_proyecto()
+        self.persist_to_db = persist_to_db
+
+        if self.persist_to_db:
+            db.create_tables()
 
         self.timestamp = datetime.now()
         self.running = False
@@ -281,14 +286,20 @@ class ResortSimulator:
         for room in self.habitaciones:
             data = self.generar_lectura_habitacion(room)
             room.update(data)
+            if self.persist_to_db:
+                db.save_lectura_habitacion(room.id, room.edificio, data)
 
         for villa in self.villas:
             data = self.generar_lectura_villa(villa)
             villa.update(data)
+            if self.persist_to_db:
+                db.save_lectura_habitacion(villa.id, villa.edificio, data)
 
         for i, chiller in enumerate(self.chillers):
             data = self.generar_lectura_chiller(chiller, i)
             chiller.update(data)
+            if self.persist_to_db:
+                db.save_lectura_chiller(chiller.id, data)
 
         for i, hm in enumerate(self.heat_machines):
             data = self.generar_lectura_heat_machine(hm, i)
@@ -302,6 +313,8 @@ class ResortSimulator:
             data = self.generar_lectura_panel(panel)
             if data:
                 panel.update(data)
+                if self.persist_to_db:
+                    db.save_lectura_panel(panel.id, data)
 
         self.stats["total_lecturas"] += len(self.all_devices)
 

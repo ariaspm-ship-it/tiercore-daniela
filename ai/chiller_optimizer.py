@@ -278,7 +278,7 @@ class ChillerOptimizer:
 
             resultado = OptimizacionResult(
                 chiller_id=chiller.id,
-                cop_actual=chiller.last_data.cop if chiller.last_data else 0,
+                cop_actual=(chiller.last_data.cop if (chiller.last_data and chiller.last_data.cop is not None) else 0.0),
                 cop_objetivo=round(cop_objetivo, 2),
                 ahorro_potencial_kw=ahorro_kw,
                 ahorro_potencial_euro_dia=ahorro_euro,
@@ -290,8 +290,8 @@ class ChillerOptimizer:
             resultados.append(resultado)
 
             ai_logger.info(
-                f"📊 {chiller.id}: COP={resultado.cop_actual:.2f} | "
-                f"Ahorro={ahorro_euro}€/día | {recomendacion[:60]}..."
+                f"{chiller.id}: COP={resultado.cop_actual:.2f} | "
+                f"Ahorro={ahorro_euro}€/dia | {recomendacion[:60]}..."
             )
 
         self.historial_optimizaciones.append({

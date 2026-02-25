@@ -13,6 +13,7 @@ from core.config import Config
 from core.logger import main_logger
 
 Base = declarative_base()
+ALERTA_DATOS_TYPE = JSONB if 'postgresql' in Config.DATABASE_URL else JSON
 
 # ============================================
 # MODELOS
@@ -96,7 +97,7 @@ class Alerta(Base):
     dispositivo_id = Column(String(20), index=True)
     mensaje = Column(String(500))
     recomendacion = Column(String(500))
-    datos = Column(JSONB)  # Datos adicionales en formato JSON
+    datos = Column(ALERTA_DATOS_TYPE)  # Datos adicionales en formato JSON
     timestamp = Column(DateTime, index=True)
     leida = Column(Boolean, default=False)
     resuelta = Column(Boolean, default=False)
@@ -212,10 +213,25 @@ class Database:
                 electricity_kwh=data.electricity_kwh,
                 water_cold_m3=data.water_cold_m3,
                 water_hot_m3=data.water_hot_m3,
-                fc_kwh=data.fc_kwh,
-                return_temp=data.return_temp,
-                fuga_detectada=data.fuga_detectada,
+                fc_kwh=getattr(data, 'fc_kwh', 0),
+                return_temp=getattr(data, 'return_temp', None),
+                fuga_detectada=getattr(data, 'fuga_detectada', False),
                 source='simulador'
+            )
+            session.add(lectura)
+
+    def save_lectura_panel(self, panel_id, data):
+        """Guarda una lectura de panel eléctrico"""
+        with self.session_scope() as session:
+            lectura = LecturaPanel(
+                panel_id=panel_id,
+                timestamp=data.timestamp,
+                voltage=(data.voltage_l1 + data.voltage_l2 + data.voltage_l3) / 3,
+                current=(data.current_l1 + data.current_l2 + data.current_l3) / 3,
+                power_kw=data.power_kw,
+                frequency=data.frequency,
+                breaker_status=data.breaker_status,
+                alarm=data.alarm
             )
             session.add(lectura)
     

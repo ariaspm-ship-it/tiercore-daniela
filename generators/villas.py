@@ -56,7 +56,7 @@ def generar_villas():
         villa = Villa(f"V{i:02d}", f"Villa {i}")
         villas.append(villa)
     
-    print(f"✅ {len(villas)} villas generadas")
+    print(f"{len(villas)} villas generadas")
     return villas
 
 # Generar al importar
