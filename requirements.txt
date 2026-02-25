@@ -27,3 +27,6 @@ pytest-cov==4.1.0
 
 # Simulación (para prototipo)
 faker==20.1.0
+
+# Agente Claude
+anthropic>=0.40.0
