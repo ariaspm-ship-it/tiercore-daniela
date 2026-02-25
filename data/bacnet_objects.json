@@ -1,0 +1,6658 @@
+[
+  {
+    "point_name": "A_A301_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10001,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A301_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10002,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A301_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10003,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A301_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10004,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A302_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10005,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A302_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10006,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A302_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10007,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A302_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10008,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A303_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10009,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A303_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10010,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A303_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10011,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A303_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10012,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A304_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10013,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A304_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10014,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A304_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10015,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A304_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10016,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A305_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10017,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A305_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10018,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A305_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10019,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A305_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10020,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A306_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10021,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A306_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10022,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A306_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10023,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A306_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10024,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A307_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10025,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A307_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10026,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A307_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10027,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A307_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10028,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A308_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10029,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A308_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10030,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A308_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10031,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A308_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10032,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A309_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10033,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A309_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10034,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A309_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10035,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A309_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10036,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A310_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10037,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A310_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10038,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A310_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10039,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A310_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10040,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A311_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10041,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A311_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10042,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A311_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10043,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A311_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10044,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A312_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10045,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A312_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10046,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A312_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10047,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A312_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10048,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A313_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10049,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A313_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10050,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A313_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10051,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A313_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10052,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A314_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10053,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A314_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10054,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A314_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10055,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A314_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10056,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A315_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10057,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A315_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10058,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A315_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10059,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A315_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10060,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A316_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10061,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A316_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10062,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A316_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10063,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A316_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10064,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A317_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10065,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A317_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10066,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A317_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10067,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A317_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10068,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A318_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10069,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A318_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10070,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A318_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10071,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A318_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10072,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A319_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10073,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A319_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10074,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A319_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10075,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A319_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10076,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A401_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10077,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A401_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10078,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A401_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10079,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A401_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10080,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A402_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10081,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A402_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10082,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A402_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10083,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A402_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10084,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A403_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10085,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A403_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10086,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A403_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10087,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A403_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10088,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A404_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10089,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A404_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10090,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A404_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10091,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A404_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10092,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A405_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10093,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A405_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10094,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A405_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10095,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A405_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10096,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A406_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10097,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A406_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10098,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A406_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10099,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A406_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10100,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A407_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10101,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A407_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10102,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A407_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10103,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A407_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10104,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A408_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10105,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A408_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10106,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A408_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10107,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A408_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10108,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A409_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10109,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A409_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10110,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A409_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10111,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A409_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10112,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A410_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10113,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A410_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10114,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A410_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10115,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A410_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10116,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A411_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10117,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A411_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10118,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A411_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10119,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A411_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10120,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A412_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10121,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A412_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10122,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A412_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10123,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A412_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10124,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A413_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10125,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A413_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10126,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A413_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10127,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A413_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10128,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A414_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10129,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A414_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10130,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A414_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10131,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A414_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10132,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A415_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10133,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A415_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10134,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A415_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10135,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A415_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10136,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A416_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10137,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A416_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10138,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A416_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10139,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A416_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10140,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A417_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10141,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A417_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10142,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A417_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10143,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A417_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10144,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A418_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10145,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A418_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10146,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A418_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10147,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A418_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10148,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A419_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10149,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A419_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10150,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A419_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10151,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A419_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10152,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A501_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10153,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A501_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10154,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A501_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10155,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A501_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10156,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A502_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10157,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A502_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10158,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A502_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10159,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A502_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10160,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A503_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10161,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A503_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10162,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A503_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10163,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A503_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10164,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A504_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10165,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A504_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10166,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A504_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10167,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A504_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10168,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A505_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10169,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A505_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10170,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A505_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10171,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A505_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10172,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A506_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10173,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A506_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10174,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A506_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10175,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A506_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10176,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A507_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10177,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A507_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10178,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A507_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10179,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A507_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10180,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A508_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10181,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A508_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10182,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A508_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10183,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A508_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10184,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A509_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10185,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A509_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10186,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A509_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10187,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A509_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10188,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A510_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10189,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A510_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10190,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A510_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10191,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A510_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10192,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A511_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10193,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A511_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10194,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A511_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10195,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A511_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10196,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A512_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10197,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A512_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10198,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A512_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10199,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A512_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10200,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A513_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10201,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A513_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10202,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A513_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10203,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A513_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10204,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A514_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10205,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A514_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10206,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A514_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10207,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A514_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10208,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A515_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10209,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A515_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10210,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A515_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10211,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A515_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10212,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A516_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10213,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A516_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10214,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A516_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10215,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A516_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10216,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A517_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10217,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A517_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10218,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A517_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10219,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A517_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10220,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A518_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10221,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A518_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10222,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A518_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10223,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A518_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10224,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A519_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10225,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A519_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10226,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A519_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10227,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A519_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10228,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A601_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10229,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A601_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10230,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A601_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10231,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A601_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10232,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A602_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10233,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A602_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10234,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A602_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10235,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A602_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10236,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A603_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10237,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A603_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10238,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A603_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10239,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A603_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10240,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A604_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10241,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A604_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10242,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A604_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10243,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A604_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10244,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A605_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10245,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A605_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10246,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A605_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10247,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A605_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10248,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A606_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10249,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A606_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10250,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A606_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10251,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A606_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10252,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A607_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10253,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A607_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10254,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A607_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10255,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A607_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10256,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A608_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10257,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A608_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10258,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A608_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10259,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A608_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10260,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A609_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10261,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A609_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10262,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A609_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10263,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A609_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10264,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A610_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10265,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A610_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10266,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A610_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10267,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A610_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10268,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A611_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10269,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A611_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10270,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A611_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10271,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A611_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10272,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A612_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10273,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A612_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10274,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A612_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10275,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A612_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10276,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A613_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10277,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A613_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10278,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A613_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10279,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A613_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10280,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A614_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10281,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A614_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10282,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A614_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10283,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A614_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10284,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A615_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10285,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A615_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10286,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A615_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10287,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A615_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10288,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A616_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10289,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A616_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10290,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A616_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10291,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A616_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10292,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A617_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10293,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A617_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10294,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A617_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10295,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A617_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10296,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A618_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10297,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A618_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10298,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A618_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10299,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A618_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10300,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A619_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10301,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A619_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10302,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A619_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10303,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A619_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10304,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A701_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10305,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A701_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10306,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A701_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10307,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A701_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10308,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A702_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10309,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A702_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10310,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A702_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10311,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A702_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10312,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A703_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10313,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A703_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10314,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A703_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10315,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A703_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10316,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A704_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10317,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A704_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10318,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A704_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10319,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A704_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10320,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A705_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10321,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A705_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10322,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A705_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10323,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A705_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10324,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A706_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10325,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A706_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10326,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A706_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10327,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A706_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10328,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A707_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10329,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A707_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10330,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A707_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10331,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A707_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10332,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A708_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10333,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A708_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10334,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A708_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10335,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A708_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10336,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A709_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10337,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A709_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10338,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A709_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10339,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A709_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10340,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A710_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10341,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A710_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10342,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A710_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10343,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A710_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10344,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A711_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10345,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A711_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10346,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A711_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10347,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A711_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10348,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A712_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10349,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A712_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10350,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A712_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10351,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A712_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10352,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A713_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10353,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A713_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10354,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A713_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10355,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A713_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10356,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A714_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10357,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A714_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10358,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A714_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10359,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A714_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10360,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A715_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10361,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A715_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10362,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A715_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10363,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A715_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10364,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A716_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10365,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A716_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10366,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A716_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10367,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A716_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10368,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A717_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10369,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A717_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10370,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A717_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10371,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A717_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10372,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A718_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10373,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A718_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10374,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A718_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10375,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A718_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10376,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A719_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10377,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A719_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10378,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A719_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10379,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A719_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10380,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A720_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10381,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A720_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10382,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A720_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10383,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A720_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10384,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A721_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10385,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A721_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10386,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A721_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10387,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A721_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10388,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A722_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10389,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A722_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10390,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A722_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10391,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A722_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10392,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A723_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10393,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A723_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10394,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A723_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10395,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A723_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10396,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A724_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10397,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A724_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10398,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A724_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10399,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A724_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10400,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A725_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10401,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A725_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10402,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A725_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10403,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A725_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10404,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A726_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10405,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A726_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10406,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A726_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10407,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A726_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10408,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A727_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10409,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A727_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10410,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A727_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10411,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A727_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10412,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A728_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10413,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A728_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10414,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A728_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10415,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A728_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10416,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A729_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10417,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A729_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10418,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A729_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10419,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A729_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10420,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A730_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10421,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A730_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10422,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A730_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10423,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A730_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10424,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A731_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10425,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A731_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10426,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A731_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10427,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A731_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10428,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A732_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10429,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A732_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10430,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A732_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10431,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A732_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10432,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A733_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10433,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A733_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10434,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A733_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10435,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A733_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10436,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A734_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10437,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A734_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10438,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A734_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10439,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A734_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10440,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A735_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10441,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A735_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10442,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A735_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10443,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A735_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10444,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A736_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10445,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A736_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10446,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A736_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10447,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A736_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10448,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A737_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10449,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A737_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10450,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A737_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10451,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A737_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10452,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A738_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10453,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A738_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10454,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A738_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10455,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A738_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10456,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A739_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10457,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A739_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10458,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A739_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10459,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A739_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10460,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A740_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10461,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A740_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10462,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A740_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10463,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A740_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10464,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A741_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10465,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A741_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10466,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A741_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10467,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A741_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10468,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A742_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10469,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A742_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10470,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A742_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10471,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A742_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10472,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A743_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10473,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A743_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10474,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A743_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10475,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_A743_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10476,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "B_B101_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10477,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B101_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10478,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B101_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10479,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B101_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10480,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B102_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10481,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B102_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10482,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B102_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10483,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B102_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10484,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B103_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10485,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B103_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10486,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B103_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10487,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B103_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10488,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B104_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10489,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B104_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10490,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B104_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10491,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B104_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10492,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B105_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10493,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B105_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10494,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B105_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10495,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B105_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10496,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B106_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10497,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B106_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10498,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B106_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10499,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B106_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10500,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B107_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10501,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B107_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10502,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B107_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10503,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B107_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10504,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B108_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10505,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B108_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10506,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B108_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10507,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B108_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10508,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B201_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10509,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B201_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10510,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B201_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10511,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B201_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10512,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B202_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10513,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B202_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10514,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B202_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10515,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B202_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10516,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B203_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10517,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B203_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10518,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B203_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10519,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B203_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10520,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B204_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10521,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B204_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10522,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B204_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10523,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B204_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10524,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B205_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10525,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B205_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10526,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B205_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10527,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B205_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10528,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B206_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10529,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B206_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10530,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B206_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10531,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B206_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10532,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B207_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10533,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B207_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10534,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B207_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10535,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B207_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10536,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B208_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10537,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B208_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10538,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B208_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10539,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B208_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10540,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B301_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10541,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B301_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10542,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B301_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10543,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B301_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10544,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B302_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10545,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B302_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10546,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B302_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10547,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B302_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10548,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B303_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10549,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B303_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10550,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B303_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10551,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B303_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10552,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B304_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10553,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B304_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10554,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B304_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10555,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B304_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10556,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B305_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10557,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B305_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10558,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B305_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10559,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B305_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10560,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B306_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10561,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B306_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10562,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B306_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10563,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B306_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10564,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B307_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10565,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B307_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10566,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B307_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10567,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B307_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10568,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B308_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10569,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B308_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10570,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B308_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10571,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B308_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10572,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B401_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10573,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B401_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10574,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B401_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10575,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B401_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10576,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B402_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10577,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B402_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10578,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B402_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10579,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B402_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10580,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B403_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10581,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B403_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10582,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B403_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10583,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B403_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10584,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B404_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10585,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B404_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10586,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B404_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10587,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B404_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10588,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B405_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10589,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B405_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10590,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B405_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10591,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B405_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10592,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B406_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10593,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B406_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10594,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B406_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10595,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B406_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10596,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B407_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10597,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B407_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10598,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B407_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10599,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B407_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10600,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B501_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10601,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B501_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10602,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B501_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10603,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B501_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10604,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B502_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10605,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B502_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10606,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B502_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10607,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B502_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10608,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B503_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10609,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B503_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10610,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B503_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10611,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B503_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10612,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B504_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10613,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B504_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10614,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B504_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10615,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B504_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10616,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B505_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10617,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B505_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10618,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B505_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10619,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B505_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10620,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B506_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10621,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B506_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10622,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B506_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10623,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B506_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10624,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B601_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10625,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B601_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10626,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B601_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10627,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B601_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10628,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B602_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10629,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B602_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10630,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B602_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10631,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B602_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10632,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B603_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10633,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B603_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10634,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B603_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10635,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B603_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10636,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B604_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10637,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B604_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10638,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B604_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10639,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "B_B604_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10640,
+    "property": "presentValue",
+    "device_id": 1066,
+    "writable": false
+  },
+  {
+    "point_name": "C_C102_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10641,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C102_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10642,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C102_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10643,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C102_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10644,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C104_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10645,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C104_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10646,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C104_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10647,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C104_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10648,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C106_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10649,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C106_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10650,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C106_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10651,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C106_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10652,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C108_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10653,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C108_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10654,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C108_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10655,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C108_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10656,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C201_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10657,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C201_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10658,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C201_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10659,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C201_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10660,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C202_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10661,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C202_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10662,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C202_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10663,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C202_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10664,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C203_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10665,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C203_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10666,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C203_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10667,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C203_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10668,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C204_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10669,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C204_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10670,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C204_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10671,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C204_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10672,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C206_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10673,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C206_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10674,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C206_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10675,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C206_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10676,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C208_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10677,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C208_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10678,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C208_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10679,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C208_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10680,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C301_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10681,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C301_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10682,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C301_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10683,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C301_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10684,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C302_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10685,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C302_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10686,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C302_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10687,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C302_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10688,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C303_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10689,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C303_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10690,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C303_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10691,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C303_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10692,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C304_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10693,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C304_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10694,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C304_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10695,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C304_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10696,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C306_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10697,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C306_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10698,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C306_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10699,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C306_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10700,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C308_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10701,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C308_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10702,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C308_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10703,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C308_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10704,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C401_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10705,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C401_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10706,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C401_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10707,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C401_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10708,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C402_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10709,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C402_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10710,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C402_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10711,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C402_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10712,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C403_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10713,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C403_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10714,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C403_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10715,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C403_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10716,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C404_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10717,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C404_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10718,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C404_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10719,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C404_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10720,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C406_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10721,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C406_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10722,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C406_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10723,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C406_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10724,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C408_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10725,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C408_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10726,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C408_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10727,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C408_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10728,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C501_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10729,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C501_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10730,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C501_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10731,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C501_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10732,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C502_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10733,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C502_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10734,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C502_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10735,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C502_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10736,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C503_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10737,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C503_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10738,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C503_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10739,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C503_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10740,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C504_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10741,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C504_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10742,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C504_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10743,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C504_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10744,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C506_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10745,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C506_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10746,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C506_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10747,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "C_C506_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10748,
+    "property": "presentValue",
+    "device_id": 1067,
+    "writable": false
+  },
+  {
+    "point_name": "V_V01_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10749,
+    "property": "presentValue",
+    "device_id": 1086,
+    "writable": false
+  },
+  {
+    "point_name": "V_V01_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10750,
+    "property": "presentValue",
+    "device_id": 1086,
+    "writable": false
+  },
+  {
+    "point_name": "V_V01_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10751,
+    "property": "presentValue",
+    "device_id": 1086,
+    "writable": false
+  },
+  {
+    "point_name": "V_V01_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10752,
+    "property": "presentValue",
+    "device_id": 1086,
+    "writable": false
+  },
+  {
+    "point_name": "V_V02_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10753,
+    "property": "presentValue",
+    "device_id": 1086,
+    "writable": false
+  },
+  {
+    "point_name": "V_V02_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10754,
+    "property": "presentValue",
+    "device_id": 1086,
+    "writable": false
+  },
+  {
+    "point_name": "V_V02_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10755,
+    "property": "presentValue",
+    "device_id": 1086,
+    "writable": false
+  },
+  {
+    "point_name": "V_V02_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10756,
+    "property": "presentValue",
+    "device_id": 1086,
+    "writable": false
+  },
+  {
+    "point_name": "V_V03_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10757,
+    "property": "presentValue",
+    "device_id": 1086,
+    "writable": false
+  },
+  {
+    "point_name": "V_V03_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10758,
+    "property": "presentValue",
+    "device_id": 1086,
+    "writable": false
+  },
+  {
+    "point_name": "V_V03_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10759,
+    "property": "presentValue",
+    "device_id": 1086,
+    "writable": false
+  },
+  {
+    "point_name": "V_V03_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10760,
+    "property": "presentValue",
+    "device_id": 1086,
+    "writable": false
+  },
+  {
+    "point_name": "V_V04_ROOM_LEAK_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10761,
+    "property": "presentValue",
+    "device_id": 1086,
+    "writable": false
+  },
+  {
+    "point_name": "V_V04_ROOM_OCCUPANCY",
+    "object_type": "binaryValue",
+    "object_instance": 10762,
+    "property": "presentValue",
+    "device_id": 1086,
+    "writable": false
+  },
+  {
+    "point_name": "V_V04_ROOM_SETPOINT_C",
+    "object_type": "analogValue",
+    "object_instance": 10763,
+    "property": "presentValue",
+    "device_id": 1086,
+    "writable": false
+  },
+  {
+    "point_name": "V_V04_ROOM_HUMIDITY_RH",
+    "object_type": "analogValue",
+    "object_instance": 10764,
+    "property": "presentValue",
+    "device_id": 1086,
+    "writable": false
+  },
+  {
+    "point_name": "A_2CH_1_HVAC_TEMP_SUPPLY_C",
+    "object_type": "analogValue",
+    "object_instance": 10765,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_2CH_1_HVAC_TEMP_RETURN_C",
+    "object_type": "analogValue",
+    "object_instance": 10766,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_2CH_1_HVAC_POWER_KW",
+    "object_type": "analogValue",
+    "object_instance": 10767,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_2CH_1_HVAC_COOLING_KW",
+    "object_type": "analogValue",
+    "object_instance": 10768,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_2CH_1_HVAC_COP",
+    "object_type": "analogValue",
+    "object_instance": 10769,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_2CH_1_HVAC_COMPRESSOR_STATUS",
+    "object_type": "analogValue",
+    "object_instance": 10770,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_2CH_1_HVAC_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10771,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_2CH_1_HVAC_FLOW_M3H",
+    "object_type": "analogValue",
+    "object_instance": 10772,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_2CH_1_HVAC_RUN_HOURS",
+    "object_type": "analogValue",
+    "object_instance": 10773,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_2CH_1_HVAC_EFFICIENCY_PCT",
+    "object_type": "analogValue",
+    "object_instance": 10774,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_2CH_1_HVAC_MAINTENANCE_DUE",
+    "object_type": "binaryValue",
+    "object_instance": 10775,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_2CH_1_HVAC_AVAILABILITY",
+    "object_type": "binaryValue",
+    "object_instance": 10776,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_2CH_1_HVAC_SP_TEMP_SUPPLY_C",
+    "object_type": "analogValue",
+    "object_instance": 10777,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": true
+  },
+  {
+    "point_name": "A_2CH_1_HVAC_MODE",
+    "object_type": "binaryValue",
+    "object_instance": 10778,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_2CH_2_HVAC_TEMP_SUPPLY_C",
+    "object_type": "analogValue",
+    "object_instance": 10779,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_2CH_2_HVAC_TEMP_RETURN_C",
+    "object_type": "analogValue",
+    "object_instance": 10780,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_2CH_2_HVAC_POWER_KW",
+    "object_type": "analogValue",
+    "object_instance": 10781,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_2CH_2_HVAC_COOLING_KW",
+    "object_type": "analogValue",
+    "object_instance": 10782,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_2CH_2_HVAC_COP",
+    "object_type": "analogValue",
+    "object_instance": 10783,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_2CH_2_HVAC_COMPRESSOR_STATUS",
+    "object_type": "analogValue",
+    "object_instance": 10784,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_2CH_2_HVAC_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10785,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_2CH_2_HVAC_FLOW_M3H",
+    "object_type": "analogValue",
+    "object_instance": 10786,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_2CH_2_HVAC_RUN_HOURS",
+    "object_type": "analogValue",
+    "object_instance": 10787,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_2CH_2_HVAC_EFFICIENCY_PCT",
+    "object_type": "analogValue",
+    "object_instance": 10788,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_2CH_2_HVAC_MAINTENANCE_DUE",
+    "object_type": "binaryValue",
+    "object_instance": 10789,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_2CH_2_HVAC_AVAILABILITY",
+    "object_type": "binaryValue",
+    "object_instance": 10790,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_2CH_2_HVAC_SP_TEMP_SUPPLY_C",
+    "object_type": "analogValue",
+    "object_instance": 10791,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": true
+  },
+  {
+    "point_name": "A_2CH_2_HVAC_MODE",
+    "object_type": "binaryValue",
+    "object_instance": 10792,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_2CH_3_HVAC_TEMP_SUPPLY_C",
+    "object_type": "analogValue",
+    "object_instance": 10793,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_2CH_3_HVAC_TEMP_RETURN_C",
+    "object_type": "analogValue",
+    "object_instance": 10794,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_2CH_3_HVAC_POWER_KW",
+    "object_type": "analogValue",
+    "object_instance": 10795,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_2CH_3_HVAC_COOLING_KW",
+    "object_type": "analogValue",
+    "object_instance": 10796,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_2CH_3_HVAC_COP",
+    "object_type": "analogValue",
+    "object_instance": 10797,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_2CH_3_HVAC_COMPRESSOR_STATUS",
+    "object_type": "analogValue",
+    "object_instance": 10798,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_2CH_3_HVAC_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10799,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_2CH_3_HVAC_FLOW_M3H",
+    "object_type": "analogValue",
+    "object_instance": 10800,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_2CH_3_HVAC_RUN_HOURS",
+    "object_type": "analogValue",
+    "object_instance": 10801,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_2CH_3_HVAC_EFFICIENCY_PCT",
+    "object_type": "analogValue",
+    "object_instance": 10802,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_2CH_3_HVAC_MAINTENANCE_DUE",
+    "object_type": "binaryValue",
+    "object_instance": 10803,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_2CH_3_HVAC_AVAILABILITY",
+    "object_type": "binaryValue",
+    "object_instance": 10804,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_2CH_3_HVAC_SP_TEMP_SUPPLY_C",
+    "object_type": "analogValue",
+    "object_instance": 10805,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": true
+  },
+  {
+    "point_name": "A_2CH_3_HVAC_MODE",
+    "object_type": "binaryValue",
+    "object_instance": 10806,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_CXAU_1_HVAC_TEMP_SUPPLY_C",
+    "object_type": "analogValue",
+    "object_instance": 10807,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_CXAU_1_HVAC_TEMP_RETURN_C",
+    "object_type": "analogValue",
+    "object_instance": 10808,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_CXAU_1_HVAC_POWER_KW",
+    "object_type": "analogValue",
+    "object_instance": 10809,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_CXAU_1_HVAC_HEATING_KW",
+    "object_type": "analogValue",
+    "object_instance": 10810,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_CXAU_1_HVAC_EFFICIENCY",
+    "object_type": "analogValue",
+    "object_instance": 10811,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_CXAU_1_HVAC_PUMP_STATUS",
+    "object_type": "analogValue",
+    "object_instance": 10812,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_CXAU_1_HVAC_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10813,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_CXAU_1_HVAC_RUN_HOURS",
+    "object_type": "analogValue",
+    "object_instance": 10814,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_CXAU_1_HVAC_WATER_FLOW_M3H",
+    "object_type": "analogValue",
+    "object_instance": 10815,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_CXAU_1_HVAC_SP_TEMP_SUPPLY_C",
+    "object_type": "analogValue",
+    "object_instance": 10816,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": true
+  },
+  {
+    "point_name": "A_CXAU_1_HVAC_AVAILABILITY",
+    "object_type": "binaryValue",
+    "object_instance": 10817,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_CXAU_1_HVAC_MODE",
+    "object_type": "binaryValue",
+    "object_instance": 10818,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_CXAU_2_HVAC_TEMP_SUPPLY_C",
+    "object_type": "analogValue",
+    "object_instance": 10819,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_CXAU_2_HVAC_TEMP_RETURN_C",
+    "object_type": "analogValue",
+    "object_instance": 10820,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_CXAU_2_HVAC_POWER_KW",
+    "object_type": "analogValue",
+    "object_instance": 10821,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_CXAU_2_HVAC_HEATING_KW",
+    "object_type": "analogValue",
+    "object_instance": 10822,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_CXAU_2_HVAC_EFFICIENCY",
+    "object_type": "analogValue",
+    "object_instance": 10823,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_CXAU_2_HVAC_PUMP_STATUS",
+    "object_type": "analogValue",
+    "object_instance": 10824,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_CXAU_2_HVAC_ALARM",
+    "object_type": "binaryValue",
+    "object_instance": 10825,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_CXAU_2_HVAC_RUN_HOURS",
+    "object_type": "analogValue",
+    "object_instance": 10826,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_CXAU_2_HVAC_WATER_FLOW_M3H",
+    "object_type": "analogValue",
+    "object_instance": 10827,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_CXAU_2_HVAC_SP_TEMP_SUPPLY_C",
+    "object_type": "analogValue",
+    "object_instance": 10828,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": true
+  },
+  {
+    "point_name": "A_CXAU_2_HVAC_AVAILABILITY",
+    "object_type": "binaryValue",
+    "object_instance": 10829,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "A_CXAU_2_HVAC_MODE",
+    "object_type": "binaryValue",
+    "object_instance": 10830,
+    "property": "presentValue",
+    "device_id": 1065,
+    "writable": false
+  },
+  {
+    "point_name": "SITE_RESORT_SITE_TOTAL_POWER_KW",
+    "object_type": "analogValue",
+    "object_instance": 10831,
+    "property": "presentValue",
+    "device_id": 1083,
+    "writable": false
+  },
+  {
+    "point_name": "SITE_RESORT_SITE_TOTAL_WATER_M3",
+    "object_type": "analogValue",
+    "object_instance": 10832,
+    "property": "presentValue",
+    "device_id": 1083,
+    "writable": false
+  }
+]

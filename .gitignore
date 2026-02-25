@@ -147,6 +147,11 @@ yarn.lock
 *.db
 *.sqlite
 data/
+!data/
+data/*
+!data/point_mapping.csv
+!data/bacnet_objects.json
+!data/modbus_registers.json
 logs/
 output/
 temp/
