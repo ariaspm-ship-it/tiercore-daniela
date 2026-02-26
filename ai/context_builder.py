@@ -99,7 +99,7 @@ class ContextBuilder:
             "fase": "2"
         }
 
-    def get_realtime_context(self, force_refresh: bool = True) -> Dict[str, Any]:
+    def get_realtime_context(self, force_refresh: bool = False) -> Dict[str, Any]:
         if not force_refresh and self.last_update:
             elapsed = (datetime.now() - self.last_update).total_seconds()
             if elapsed < 30 and self.last_context:

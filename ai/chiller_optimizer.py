@@ -195,11 +195,7 @@ class ChillerOptimizer:
         media_reciente = float(np.mean(cop_reciente))
         media_historica = float(np.mean(cop_historico))
 
-        if chiller.id in self.modelos:
-            hora_media = float(np.mean([d.timestamp.hour for d in chiller.history[-50:]]))
-            cop_esperado = self.predecir_cop(chiller.id, hora_media, 28, 50)
-        else:
-            cop_esperado = media_historica * 1.02
+        cop_esperado = media_historica * 1.02
 
         degradacion = (cop_esperado - media_reciente) / cop_esperado
 

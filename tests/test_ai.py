@@ -104,7 +104,8 @@ class TestChillerOptimizer(unittest.TestCase):
 
             for j, ch in enumerate(self.chillers):
                 if j == 2:
-                    cop = 3.4 + random.uniform(-0.1, 0.1)
+                    # Temporal degradation: healthy historical COP, degraded recent COP
+                    cop = 3.4 + random.uniform(-0.1, 0.1) if i <= 167 else 3.8 + random.uniform(-0.1, 0.1)
                 else:
                     cop = 3.8 + random.uniform(-0.1, 0.1)
 
