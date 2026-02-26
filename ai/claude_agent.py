@@ -7,6 +7,12 @@ from datetime import datetime
 import json
 
 try:
+    from dotenv import load_dotenv
+except ImportError:
+    def load_dotenv(*args, **kwargs):
+        return False
+
+try:
     from anthropic import Anthropic, RateLimitError, APIError
     ANTHROPIC_AVAILABLE = True
 except ImportError:
@@ -24,6 +30,8 @@ except ImportError:
 
 from core.logger import ai_logger
 from ai.context_builder import ContextBuilder
+
+load_dotenv()
 
 
 class DanielaAgent:

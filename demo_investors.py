@@ -1,11 +1,16 @@
 import asyncio
+import argparse
 import logging
 import time
 from datetime import datetime
 from typing import Any
 
 
-def print_slow(text: str, delay: float = 0.008) -> None:
+def print_slow(text: str, delay: float = 0.008, enabled: bool = True) -> None:
+    if not enabled:
+        print(text)
+        return
+
     for char in text:
         print(char, end="", flush=True)
         time.sleep(delay)
@@ -131,12 +136,23 @@ def show_projection() -> None:
     print("- ROI estimado: < 8 meses")
 
 
-def demo() -> None:
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description="Demo para inversores de DANIELA")
+    parser.add_argument("--test", action="store_true", help="Modo prueba rápida (menos pasos y sin pausas)")
+    parser.add_argument("--steps", type=int, default=36, help="Pasos de simulación previos al dashboard")
+    parser.add_argument("--no-slow", action="store_true", help="Desactiva impresión lenta")
+    return parser.parse_args()
+
+
+def demo(test_mode: bool = False, steps: int = 36, slow_output: bool = True) -> None:
     quiet_project_logs()
     print_header()
-    print_slow("Inicializando simulacion y motor de IA...")
+    if test_mode:
+        print("MODO TEST ACTIVADO")
+    print_slow("Inicializando simulacion y motor de IA...", enabled=slow_output)
 
-    simulator = asyncio.run(build_simulated_state())
+    effective_steps = max(3, 8 if test_mode else steps)
+    simulator = asyncio.run(build_simulated_state(effective_steps))
     show_dashboard(simulator)
     run_chiller_optimization(simulator)
     run_leak_detection(simulator)
@@ -150,4 +166,5 @@ def demo() -> None:
 
 
 if __name__ == "__main__":
-    demo()
+    args = parse_args()
+    demo(test_mode=args.test, steps=args.steps, slow_output=not args.no_slow)

@@ -6,6 +6,39 @@ import sys
 from pathlib import Path
 from .config import Config
 
+
+def _force_utf8_console_streams():
+    for stream_name in ("stdout", "stderr"):
+        stream = getattr(sys, stream_name, None)
+        if hasattr(stream, "reconfigure"):
+            try:
+                stream.reconfigure(encoding="utf-8", errors="replace")
+            except Exception:
+                pass
+
+
+_force_utf8_console_streams()
+logging.raiseExceptions = False
+
+
+def _get_console_stream():
+    if hasattr(sys.stdout, "reconfigure"):
+        try:
+            sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+        except Exception:
+            pass
+    return sys.stdout
+
+
+class SafeConsoleFormatter(logging.Formatter):
+    def format(self, record):
+        message = super().format(record)
+        try:
+            message.encode("cp1252")
+        except UnicodeEncodeError:
+            message = message.encode("ascii", "replace").decode("ascii")
+        return message
+
 def setup_logger(name, level=None):
     """Configura y retorna un logger"""
     
@@ -14,15 +47,16 @@ def setup_logger(name, level=None):
     
     logger = logging.getLogger(name)
     logger.setLevel(level)
+    logger.propagate = False
     
     # Evitar duplicados
     if logger.handlers:
         return logger
     
     # Handler para consola
-    console_handler = logging.StreamHandler(sys.stdout)
+    console_handler = logging.StreamHandler(_get_console_stream())
     console_handler.setLevel(level)
-    console_formatter = logging.Formatter(Config.LOG_FORMAT)
+    console_formatter = SafeConsoleFormatter(Config.LOG_FORMAT)
     console_handler.setFormatter(console_formatter)
     logger.addHandler(console_handler)
     

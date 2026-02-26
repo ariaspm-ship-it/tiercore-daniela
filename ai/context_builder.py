@@ -40,6 +40,23 @@ class ContextBuilder:
 
         ai_logger.info("ContextBuilder inicializado")
 
+    def _ensure_and_step_simulator(self) -> None:
+        if not SIMULATOR_AVAILABLE or not Config.MODO_SIMULACION:
+            return
+
+        if not self.simulator:
+            try:
+                self.simulator = ResortSimulator(persist_to_db=False)
+                ai_logger.info("Simulador reconectado para contexto")
+            except Exception as error:
+                ai_logger.warning(f"No se pudo reconectar simulador para contexto: {error}")
+                return
+
+        try:
+            self.simulator.step()
+        except Exception as error:
+            ai_logger.warning(f"No se pudo avanzar simulador para contexto: {error}")
+
     def _get_simulator_context(self) -> Dict[str, Any]:
         if not self.simulator:
             return {}
@@ -82,11 +99,13 @@ class ContextBuilder:
             "fase": "2"
         }
 
-    def get_realtime_context(self, force_refresh: bool = False) -> Dict[str, Any]:
+    def get_realtime_context(self, force_refresh: bool = True) -> Dict[str, Any]:
         if not force_refresh and self.last_update:
             elapsed = (datetime.now() - self.last_update).total_seconds()
             if elapsed < 30 and self.last_context:
                 return self.last_context
+
+        self._ensure_and_step_simulator()
 
         context: Dict[str, Any] = {
             "timestamp": datetime.now().isoformat(),
