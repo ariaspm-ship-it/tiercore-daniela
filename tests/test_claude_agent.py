@@ -104,7 +104,7 @@ class TestContextBuilder(unittest.TestCase):
         context = self.cb.get_realtime_context(force_refresh=True)
 
         self.assertIn("timestamp", context)
-        self.assertIn("complejo", context)
+        self.assertIn("property", context)
 
     def test_get_realtime_context_cache(self):
         context_1 = self.cb.get_realtime_context()
@@ -116,8 +116,8 @@ class TestContextBuilder(unittest.TestCase):
         formatted = self.cb.get_formatted_context()
 
         self.assertIsInstance(formatted, str)
-        self.assertIn("CONTEXTO DEL RESORT", formatted)
-        self.assertIn("Viviendas:", formatted)
+        self.assertIn("RESORT STATUS", formatted)
+        self.assertIn("Property:", formatted)
 
 
 if __name__ == '__main__':

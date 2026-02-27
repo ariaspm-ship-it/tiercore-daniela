@@ -8,7 +8,6 @@ from typing import Any, Dict, List, Optional
 from fastapi import APIRouter, HTTPException
 from starlette.concurrency import run_in_threadpool
 from pydantic import BaseModel
-from sqlalchemy import text as sa_text
 
 from core.config import Config
 from core.logger import ai_logger
@@ -43,7 +42,10 @@ def _now() -> str:
 
 
 def _query_alerts_sync(limit: int = 100, hours: int = 24) -> List[Dict[str, Any]]:
-    """Synchronous DB query for alerts within the last hours."""
+    """
+    Synchronous DB query for alerts within the last `hours` hours.
+    Returns plain dicts (session is closed before returning).
+    """
     try:
         cutoff = datetime.now() - timedelta(hours=hours)
         with db.session_scope() as session:
@@ -56,20 +58,20 @@ def _query_alerts_sync(limit: int = 100, hours: int = 24) -> List[Dict[str, Any]
             )
             return [
                 {
-                    "alert_id": r.alerta_id,
-                    "tipo": r.tipo,
-                    "severidad": r.severidad,
+                    "alert_id":     r.alerta_id,
+                    "tipo":         r.tipo,
+                    "severidad":    r.severidad,
                     "dispositivo_id": r.dispositivo_id,
-                    "mensaje": r.mensaje,
+                    "mensaje":      r.mensaje,
                     "recomendacion": r.recomendacion,
-                    "datos": r.datos or {},
-                    "timestamp": r.timestamp.isoformat() if r.timestamp else None,
-                    "resuelta": r.resuelta,
+                    "datos":        r.datos or {},
+                    "timestamp":    r.timestamp.isoformat() if r.timestamp else None,
+                    "resuelta":     r.resuelta,
                 }
                 for r in rows
             ]
     except Exception as exc:
-        ai_logger.error(f"DB query error: {exc}")
+        ai_logger.error(f"DB query error in _query_alerts_sync: {exc}")
         return []
 
 
@@ -77,19 +79,30 @@ def _db_ping_sync() -> bool:
     """Lightweight DB connectivity check."""
     try:
         with db.session_scope() as session:
-            session.execute(sa_text("SELECT 1"))
+            session.execute(db.engine.dialect.statement_compiler(
+                db.engine.dialect, None
+            ).__class__.__mro__[0]  # just importing to force connection
+            )
+    except Exception:
+        pass
+    try:
+        with db.session_scope() as session:
+            session.query(Alerta).limit(1).all()
         return True
     except Exception:
         return False
 
 
 # ---------------------------------------------------------------------------
-# GET /status — Global resort status
+# GET /status
 # ---------------------------------------------------------------------------
 
 @router.get("/status", summary="Global resort status")
 async def get_status() -> Dict[str, Any]:
-    """Aggregated real-time context from ContextBuilder (30s TTL cache)."""
+    """
+    Aggregated real-time context from ContextBuilder (30-second TTL cache).
+    Includes occupancy, active leaks, electrical and water consumption totals.
+    """
     try:
         ctx = await run_in_threadpool(get_context_builder().get_realtime_context)
         return {"timestamp": _now(), "data": ctx}
@@ -99,28 +112,18 @@ async def get_status() -> Dict[str, Any]:
 
 
 # ---------------------------------------------------------------------------
-# GET /buildings — Per-building consumption and status
-# ---------------------------------------------------------------------------
-
-@router.get("/buildings", summary="Per-building consumption and status")
-async def get_buildings() -> Dict[str, Any]:
-    """Consumption and leak status per building from the simulator."""
-    try:
-        cb = get_context_builder()
-        buildings = await run_in_threadpool(cb.get_consumption_by_building)
-        return {"timestamp": _now(), "buildings": buildings}
-    except Exception as exc:
-        ai_logger.error(f"/buildings error: {exc}")
-        raise HTTPException(status_code=503, detail="Building data unavailable")
-
-
-# ---------------------------------------------------------------------------
-# GET /chillers — All 3 RTAG chillers
+# GET /chillers
 # ---------------------------------------------------------------------------
 
 @router.get("/chillers", summary="All 3 RTAG chillers")
 async def get_chillers() -> Dict[str, Any]:
-    """COP, power, status, and degradation flag for each chiller."""
+    """
+    Returns COP, power_kw, operating status, and degradation flag for each
+    of the 3 RTAG chillers (2CH-1, 2CH-2, 2CH-3).
+
+    Degradation flag is True when COP < Config.UMBRAL_COP_MINIMO (3.5).
+    Source is 'simulator' when the simulation is running, 'database' otherwise.
+    """
     cb = get_context_builder()
     await run_in_threadpool(cb._ensure_and_step_simulator)
 
@@ -134,17 +137,18 @@ async def get_chillers() -> Dict[str, Any]:
                 cop = float(ch.get("cop") or 0.0)
                 power_kw = float(ch.get("power_kw") or 0.0)
                 chillers_out.append({
-                    "id": ch.get("id"),
-                    "cop": round(cop, 2),
-                    "power_kw": round(power_kw, 1),
-                    "status": ch.get("estado", "unknown"),
-                    "degraded": bool(0 < cop < Config.UMBRAL_COP_MINIMO),
-                    "cop_minimum": Config.UMBRAL_COP_MINIMO,
+                    "id":           ch.get("id"),
+                    "cop":          round(cop, 2),
+                    "power_kw":     round(power_kw, 1),
+                    "status":       ch.get("estado", "unknown"),
+                    "degradacion":  bool(0 < cop < Config.UMBRAL_COP_MINIMO),
+                    "cop_minimo":   Config.UMBRAL_COP_MINIMO,
                 })
         except Exception as exc:
             ai_logger.error(f"/chillers simulator error: {exc}")
             source = "error"
     else:
+        # Fallback: last DB reading per chiller
         source = "database"
         for cid in ("2CH-1", "2CH-2", "2CH-3"):
             try:
@@ -153,77 +157,88 @@ async def get_chillers() -> Dict[str, Any]:
                     r = rows[-1]
                     cop = float(r.cop or 0.0)
                     chillers_out.append({
-                        "id": cid,
-                        "cop": round(cop, 2),
-                        "power_kw": round(float(r.power_kw or 0), 1),
-                        "status": "last_known",
-                        "degraded": bool(0 < cop < Config.UMBRAL_COP_MINIMO),
-                        "cop_minimum": Config.UMBRAL_COP_MINIMO,
+                        "id":          cid,
+                        "cop":         round(cop, 2),
+                        "power_kw":    round(float(r.power_kw or 0), 1),
+                        "status":      "last_known",
+                        "degradacion": bool(0 < cop < Config.UMBRAL_COP_MINIMO),
+                        "cop_minimo":  Config.UMBRAL_COP_MINIMO,
                     })
             except Exception as exc:
-                ai_logger.warning(f"/chillers DB fallback error {cid}: {exc}")
+                ai_logger.warning(f"/chillers DB fallback error for {cid}: {exc}")
 
     return {
         "timestamp": _now(),
-        "source": source,
-        "chillers": chillers_out,
+        "source":    source,
+        "chillers":  chillers_out,
     }
 
 
 # ---------------------------------------------------------------------------
-# GET /leaks — Active water leak alerts
+# GET /leaks
 # ---------------------------------------------------------------------------
 
 @router.get("/leaks", summary="Active water leak alerts")
 async def get_leaks() -> Dict[str, Any]:
-    """Active (unresolved) leak alerts from the last 24 hours."""
+    """
+    Active (unresolved) leak alerts from the last 24 hours, queried from the
+    database. Each entry includes room_id, building, flow_lph, and confidence.
+    """
     all_alerts = await run_in_threadpool(_query_alerts_sync, 100, 24)
     fugas = [a for a in all_alerts if a["tipo"] == "fuga" and not a["resuelta"]]
 
     leaks_out = [
         {
-            "alert_id": f["alert_id"],
-            "room_id": f["dispositivo_id"],
-            "building": (f["dispositivo_id"] or "?")[0].upper(),
-            "flow_lph": float((f["datos"] or {}).get("caudal_lph", 0)),
+            "alert_id":   f["alert_id"],
+            "room_id":    f["dispositivo_id"],
+            "building":   (f["dispositivo_id"] or "?")[0].upper(),
+            "flow_lph":   float((f["datos"] or {}).get("caudal_lph", 0)),
             "confidence": float((f["datos"] or {}).get("confianza", 0)),
-            "severity": f["severidad"],
-            "message": f["mensaje"],
-            "timestamp": f["timestamp"],
+            "severity":   f["severidad"],
+            "message":    f["mensaje"],
+            "timestamp":  f["timestamp"],
         }
         for f in fugas
     ]
 
     return {
         "timestamp": _now(),
-        "leaks": leaks_out,
-        "total": len(leaks_out),
+        "leaks":     leaks_out,
+        "total":     len(leaks_out),
     }
 
 
 # ---------------------------------------------------------------------------
-# GET /alerts — Last 24h alerts (all types)
+# GET /alerts
 # ---------------------------------------------------------------------------
 
-@router.get("/alerts", summary="Last 24h alerts (all types)")
+@router.get("/alerts", summary="Last 24 h alerts (all types)")
 async def get_alerts() -> Dict[str, Any]:
-    """All alerts generated in the last 24 hours, newest first."""
+    """
+    All alerts generated in the last 24 hours (leaks, chiller, panel,
+    maintenance), ordered newest-first. Max 100 records.
+    """
     all_alerts = await run_in_threadpool(_query_alerts_sync, 100, 24)
     return {
-        "timestamp": _now(),
-        "alerts": all_alerts,
-        "total": len(all_alerts),
+        "timestamp":    _now(),
+        "alerts":       all_alerts,
+        "total":        len(all_alerts),
         "window_hours": 24,
     }
 
 
 # ---------------------------------------------------------------------------
-# GET /health — System health check
+# GET /health
 # ---------------------------------------------------------------------------
 
 @router.get("/health", summary="System health check")
 async def get_health() -> Dict[str, Any]:
-    """Operational status of key subsystems."""
+    """
+    Returns operational status of the three key subsystems:
+      - simulator_running : ResortSimulator is initialised
+      - db_connected      : database responds to a simple query
+      - api_key_configured: ANTHROPIC_API_KEY is present in the environment
+    """
     cb = get_context_builder()
     simulator_ok = cb.simulator is not None
     api_key_ok = bool(os.environ.get("ANTHROPIC_API_KEY"))
@@ -233,10 +248,10 @@ async def get_health() -> Dict[str, Any]:
 
     return {
         "timestamp": _now(),
-        "status": overall,
+        "status":    overall,
         "checks": {
-            "simulator_running": simulator_ok,
-            "db_connected": db_ok,
+            "simulator_running":  simulator_ok,
+            "db_connected":       db_ok,
             "api_key_configured": api_key_ok,
         },
         "version": Config.PROYECTO_VERSION,
@@ -245,14 +260,17 @@ async def get_health() -> Dict[str, Any]:
 
 
 # ---------------------------------------------------------------------------
-# POST /chat — Chat with Daniela
+# POST /chat
 # ---------------------------------------------------------------------------
 
 @router.post("/chat", response_model=ChatResponse, summary="Chat with Daniela")
 async def post_chat(body: ChatRequest) -> ChatResponse:
     """
-    Sends a message to the DanielaAgent (Claude-backed) and returns
-    the response. Language is auto-detected from the message.
+    Sends a message to the DanielaAgent (Claude-backed) and returns the
+    response text. The agent automatically detects language from the message;
+    the `language` field in the request body is echoed back in the response.
+
+    Body: { "message": "...", "language": "en" | "es" }
     """
     if not body.message or not body.message.strip():
         raise HTTPException(status_code=422, detail="message must not be empty")
@@ -269,15 +287,3 @@ async def post_chat(body: ChatRequest) -> ChatResponse:
         language=body.language or "es",
         timestamp=_now(),
     )
-
-
-# ---------------------------------------------------------------------------
-# POST /chat/clear — Clear conversation history
-# ---------------------------------------------------------------------------
-
-@router.post("/chat/clear", summary="Clear Daniela conversation history")
-async def post_chat_clear() -> Dict[str, Any]:
-    """Clears the conversation history for a fresh start."""
-    agent = get_agent()
-    agent.clear_history()
-    return {"timestamp": _now(), "message": "Conversation history cleared"}
