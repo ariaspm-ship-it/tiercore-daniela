@@ -1,139 +1,112 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Daniela - TierCore</title>
+  <title>DANIELA — BCH Villa Colony Resort</title>
   <link rel="stylesheet" href="styles.css">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
 </head>
 <body>
-  <div class="container">
-    <!-- Header -->
-    <header>
-      <div class="logo">
-        <h1>TIERCORE</h1>
-        <span class="product">DANIELA</span>
-      </div>
-      <div class="status">
-        <span class="indicator online"></span>
-        <span id="connection-status">Conectado</span>
-      </div>
-    </header>
 
-    <!-- Dashboard principal -->
-    <div class="dashboard">
-      <!-- UPS principal -->
-      <div class="ups-card" id="ups-main">
-        <div class="ups-header">
-          <h2>UPS-01 <span class="location">(Oficina)</span></h2>
-          <span class="badge online">ONLINE</span>
-        </div>
-        <div class="ups-details">
-          <div class="meter">
-            <label>Carga</label>
-            <div class="progress-bar">
-              <div class="progress-fill" id="load-bar" style="width: 0%"></div>
-            </div>
-            <span class="value" id="load-value">0%</span>
-          </div>
-          <div class="meter">
-            <label>Batería</label>
-            <div class="progress-bar">
-              <div class="progress-fill" id="battery-bar" style="width: 0%"></div>
-            </div>
-            <span class="value" id="battery-value">0%</span>
-          </div>
-          <div class="row">
-            <div class="metric">
-              <span class="label">Temperatura</span>
-              <span class="value" id="temperature">--°C</span>
-            </div>
-            <div class="metric">
-              <span class="label">Autonomía</span>
-              <span class="value" id="runtime">--min</span>
-            </div>
-          </div>
-          <div class="row">
-            <div class="metric">
-              <span class="label">Voltaje entrada</span>
-              <span class="value" id="input-voltage">--V</span>
-            </div>
-            <div class="metric">
-              <span class="label">Voltaje batería</span>
-              <span class="value" id="battery-voltage">--V</span>
-            </div>
-          </div>
-          <div class="health-indicator">
-            <span class="label">Salud batería</span>
-            <span class="value" id="health-value">--%</span>
-            <div class="health-bar">
-              <div class="health-fill" id="health-bar" style="width: 0%"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Alertas -->
-      <div class="alerts-panel">
-        <h3>🔔 Alertas activas</h3>
-        <div id="alerts-list">
-          <div class="alert loading">Cargando alertas...</div>
-        </div>
-      </div>
-
-      <!-- Gráfica histórica -->
-      <div class="chart-container">
-        <h3>📈 Historial carga últimas 24h</h3>
-        <canvas id="load-chart"></canvas>
-      </div>
-
-      <!-- Panel de IA -->
-      <div class="ia-panel">
-        <h3>🤖 Daniela dice:</h3>
-        <div id="ia-message" class="ia-message">
-          Conectando con el UPS...
-        </div>
-        <div class="predictions" id="predictions">
-          <!-- Se llena con JS -->
-        </div>
-      </div>
-
-      <!-- Registro de cambios -->
-      <div class="battery-log">
-        <h3>📅 Registro baterías</h3>
-        <button onclick="showBatteryForm()">+ Registrar cambio</button>
-        <div id="battery-history">
-          <p class="note">No hay cambios registrados</p>
-        </div>
-      </div>
+  <!-- ───────── HEADER ───────── -->
+  <header class="top-bar">
+    <div class="brand">
+      <h1>DANIELA</h1>
+      <span class="subtitle">BCH Villa Colony Resort &middot; Kempinski</span>
     </div>
-  </div>
-
-  <!-- Modal registro baterías -->
-  <div id="battery-modal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <h3>Registrar cambio de baterías</h3>
-      <form id="battery-form">
-        <label>Fecha del cambio</label>
-        <input type="date" id="change-date" required>
-                
-        <label>Tipo de batería</label>
-        <select id="battery-type">
-          <option value="plomo-acido">Plomo-ácido</option>
-          <option value="litio">Litio</option>
-          <option value="nicd">NiCd</option>
-        </select>
-                
-        <label>Notas (opcional)</label>
-        <textarea id="notes" rows="3"></textarea>
-                
-        <button type="submit">Guardar</button>
-      </form>
+    <div class="meta">
+      <span id="clock"></span>
+      <span class="sep">|</span>
+      <span>Last update: <strong id="last-update">--:--:--</strong></span>
     </div>
-  </div>
+  </header>
+
+  <!-- ───────── HEALTH BAR ───────── -->
+  <section class="health-bar" id="health-bar">
+    <span class="pill" id="pill-sim">Simulator</span>
+    <span class="pill" id="pill-db">Database</span>
+    <span class="pill" id="pill-key">API Key</span>
+    <span class="version" id="version-tag"></span>
+  </section>
+
+  <!-- ───────── KPI CARDS ───────── -->
+  <section class="kpi-row" id="kpi-row">
+    <div class="kpi-card">
+      <span class="kpi-label">Total Units</span>
+      <span class="kpi-value" id="kpi-units">--</span>
+    </div>
+    <div class="kpi-card">
+      <span class="kpi-label">Active Chillers</span>
+      <span class="kpi-value" id="kpi-chillers">--</span>
+    </div>
+    <div class="kpi-card">
+      <span class="kpi-label">Solar Production</span>
+      <span class="kpi-value" id="kpi-solar">-- <small>kW</small></span>
+    </div>
+    <div class="kpi-card">
+      <span class="kpi-label">Total Electricity</span>
+      <span class="kpi-value" id="kpi-elec">-- <small>kWh</small></span>
+    </div>
+  </section>
+
+  <!-- ───────── MAIN GRID ───────── -->
+  <section class="main-grid">
+
+    <!-- Chillers table -->
+    <div class="card chillers-card">
+      <h2>Chillers</h2>
+      <table id="chillers-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>COP</th>
+            <th>Power (kW)</th>
+            <th>Status</th>
+            <th>Degraded</th>
+          </tr>
+        </thead>
+        <tbody id="chillers-body">
+          <tr><td colspan="5" class="empty">Loading&hellip;</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Active Leaks -->
+    <div class="card leaks-card">
+      <h2>Active Leaks <span class="badge" id="leak-count">0</span></h2>
+      <table id="leaks-table">
+        <thead>
+          <tr>
+            <th>Room</th>
+            <th>Building</th>
+            <th>Flow (L/h)</th>
+            <th>Confidence</th>
+            <th>Source</th>
+          </tr>
+        </thead>
+        <tbody id="leaks-body">
+          <tr><td colspan="5" class="empty">No active leaks</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </section>
+
+  <!-- ───────── CHAT PANEL ───────── -->
+  <section class="card chat-card">
+    <h2>Chat with Daniela</h2>
+    <div class="chat-log" id="chat-log">
+      <div class="chat-bubble daniela">Hello! I'm Daniela, your facility intelligence assistant. Ask me anything about the resort.</div>
+    </div>
+    <form class="chat-form" id="chat-form">
+      <input type="text" id="chat-input" placeholder="Ask Daniela about the resort&hellip;" autocomplete="off">
+      <button type="submit" id="chat-send">Send</button>
+    </form>
+  </section>
+
+  <footer class="footer">
+    DANIELA v<span id="footer-version">0.1.0</span> &mdash; Data Analytics Network for Energy Logistics &amp; Infrastructure Assessment
+  </footer>
 
   <script src="dashboard.js"></script>
 </body>

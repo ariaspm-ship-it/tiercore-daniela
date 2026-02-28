@@ -1,275 +1,175 @@
-// DANIELA - Dashboard Frontend v1.0
+// DANIELA — BCH Executive Dashboard
+// Pure vanilla JS — auto-refreshes every 30 seconds
 
-// Estado global
-let socket;
-let chart;
-let historyData = [];
-let alerts = [];
+const API = "http://localhost:8000/api/v1";
+const REFRESH_MS = 30_000;
 
-// Inicialización
-document.addEventListener('DOMContentLoaded', () => {
-  console.log('🚀 Iniciando Daniela dashboard...');
-    
-  // Conectar a API
-  fetchData();
-    
-  // Actualizar cada 5 segundos
-  setInterval(fetchData, 5000);
-    
-  // Inicializar gráfica
-  initChart();
+// ── Boot ──
+document.addEventListener("DOMContentLoaded", () => {
+  tickClock();
+  setInterval(tickClock, 1_000);
+  refreshAll();
+  setInterval(refreshAll, REFRESH_MS);
+  document.getElementById("chat-form").addEventListener("submit", onChatSubmit);
 });
 
-// Obtener datos de la API
-async function fetchData() {
+// ── Clock ──
+function tickClock() {
+  document.getElementById("clock").textContent =
+    new Date().toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit", second: "2-digit" });
+}
+
+// ── Refresh everything ──
+async function refreshAll() {
+  await Promise.allSettled([
+    fetchHealth(),
+    fetchStatus(),
+    fetchChillers(),
+    fetchLeaks(),
+  ]);
+  document.getElementById("last-update").textContent =
+    new Date().toLocaleTimeString("en-GB");
+}
+
+// ── Health ──
+async function fetchHealth() {
   try {
-    // Datos del UPS
-    const upsRes = await fetch('http://localhost:8000/api/v1/ups/ups-01');
-    const upsData = await upsRes.json();
-    updateUPSDisplay(upsData);
-        
-    // Alertas
-    const alertsRes = await fetch('http://localhost:8000/api/v1/alerts');
-    const alertsData = await alertsRes.json();
-    updateAlerts(alertsData.alerts);
-        
-    // Predicciones
-    const predRes = await fetch('http://localhost:8000/api/v1/predictions');
-    const predData = await predRes.json();
-    updatePredictions(predData);
-        
-    // Actualizar histórico
-    updateHistory(upsData.data);
-        
-  } catch (error) {
-    console.log('Usando datos simulados...');
-    updateSimulatedData();
-  }
+    const r = await fetch(`${API}/health`);
+    const d = await r.json();
+    const c = d.checks || {};
+    setPill("pill-sim", c.simulator_running);
+    setPill("pill-db",  c.db_connected);
+    setPill("pill-key", c.api_key_configured);
+    document.getElementById("version-tag").textContent = `v${d.version || "?"}`;
+    document.getElementById("footer-version").textContent = d.version || "?";
+  } catch { setPill("pill-sim", false); setPill("pill-db", false); setPill("pill-key", false); }
 }
 
-// Actualizar display del UPS
-function updateUPSDisplay(data) {
-  const d = data.data || {};
-    
-  // Valores básicos
-  document.getElementById('load-value').textContent = d.ups_load?.toFixed(1) + '%' || '0%';
-  document.getElementById('load-bar').style.width = (d.ups_load || 0) + '%';
-    
-  document.getElementById('battery-value').textContent = d.battery_charge?.toFixed(1) + '%' || '0%';
-  document.getElementById('battery-bar').style.width = (d.battery_charge || 0) + '%';
-    
-  document.getElementById('temperature').textContent = (d.temperature?.toFixed(1) || '--') + '°C';
-    
-  const runtime = d.runtime_remaining || 0;
-  document.getElementById('runtime').textContent = Math.round(runtime / 60) + 'min';
-    
-  document.getElementById('input-voltage').textContent = (d.input_voltage?.toFixed(1) || '--') + 'V';
-  document.getElementById('battery-voltage').textContent = (d.battery_voltage?.toFixed(1) || '--') + 'V';
-    
-  // Salud batería (calculada)
-  const health = calculateHealth(d);
-  document.getElementById('health-value').textContent = health + '%';
-  document.getElementById('health-bar').style.width = health + '%';
+function setPill(id, ok) {
+  const el = document.getElementById(id);
+  el.classList.toggle("ok",   !!ok);
+  el.classList.toggle("fail", !ok);
 }
 
-// Calcular salud batería
-function calculateHealth(data) {
-  if (!data.battery_charge) return 95;
-    
-  // Fórmula simple: carga actual + factor temperatura + factor edad
-  let health = data.battery_charge;
-    
-  if (data.temperature > 28) {
-    health -= (data.temperature - 28) * 2;
-  }
-    
-  return Math.max(0, Math.min(100, Math.round(health)));
+// ── Status (KPI cards) ──
+async function fetchStatus() {
+  try {
+    const r = await fetch(`${API}/status`);
+    const d = (await r.json()).data;
+    const resort = d.resort || {};
+    document.getElementById("kpi-units").textContent   = resort.total_units ?? "--";
+    document.getElementById("kpi-solar").innerHTML      = `${resort.solar_production_kw ?? "--"} <small>kW</small>`;
+    document.getElementById("kpi-elec").innerHTML       = `${resort.total_electricity_kwh ?? "--"} <small>kWh</small>`;
+    // active chillers count set by fetchChillers
+  } catch { /* keep previous values */ }
 }
 
-// Actualizar alertas
-function updateAlerts(newAlerts) {
-  const alertsList = document.getElementById('alerts-list');
-  alerts = newAlerts;
-    
-  if (alerts.length === 0) {
-    alertsList.innerHTML = '<div class="alert" style="background: #0d1b2b">✅ No hay alertas activas</div>';
-    return;
-  }
-    
-  alertsList.innerHTML = alerts.map(alert => `
-    <div class="alert ${alert.severity}">
-      <strong>${alert.severity.toUpperCase()}</strong><br>
-      ${alert.text}<br>
-      <small>${new Date(alert.timestamp).toLocaleString()}</small>
-    </div>
-  `).join('');
-}
+// ── Chillers ──
+async function fetchChillers() {
+  try {
+    const r = await fetch(`${API}/chillers`);
+    const d = await r.json();
+    const chillers = d.chillers || [];
 
-// Actualizar predicciones IA
-function updatePredictions(pred) {
-  const predDiv = document.getElementById('predictions');
-  if (!pred || Object.keys(pred).length === 0) {
-    predDiv.innerHTML = '<p>Analizando datos para predicciones...</p>';
-    return;
-  }
-    
-  const iaMsg = document.getElementById('ia-message');
-    
-  if (pred.failure_probability > 0.2) {
-    iaMsg.textContent = `⚠️ Probabilidad de fallo del ${Math.round(pred.failure_probability * 100)}% en próximos días. Recomiendo revisión.`;
-  } else if (pred.trend === 'up' && pred.predicted_load > 80) {
-    iaMsg.textContent = `📈 Tendencia de carga al alza. Posible expansión necesaria.`;
-  } else {
-    iaMsg.textContent = `✅ Todo estable. Próximo mantenimiento estimado en ${pred.next_maintenance_days || 90} días.`;
-  }
-    
-  predDiv.innerHTML = `
-    <div>Tendencia: ${pred.trend === 'up' ? '📈' : '📉'}</div>
-    <div>Carga prevista: ${pred.predicted_load?.toFixed(1) || '--'}%</div>
-    <div>Riesgo fallo: ${Math.round((pred.failure_probability || 0) * 100)}%</div>
-  `;
-}
+    document.getElementById("kpi-chillers").textContent = chillers.length;
 
-// Actualizar histórico y gráfica
-function updateHistory(data) {
-  if (!data) return;
-    
-  historyData.push({
-    time: new Date().toLocaleTimeString(),
-    load: data.ups_load || 0,
-    temp: data.temperature || 0
-  });
-    
-  if (historyData.length > 50) {
-    historyData.shift();
-  }
-    
-  if (chart) {
-    chart.data.labels = historyData.map(d => d.time);
-    chart.data.datasets[0].data = historyData.map(d => d.load);
-    chart.data.datasets[1].data = historyData.map(d => d.temp);
-    chart.update();
-  }
-}
-
-// Inicializar gráfica
-function initChart() {
-  const ctx = document.getElementById('load-chart').getContext('2d');
-  chart = new Chart(ctx, {
-    type: 'line',
-    data: {
-      labels: [],
-      datasets: [
-        {
-          label: 'Carga (%)',
-          data: [],
-          borderColor: '#00b8d9',
-          backgroundColor: 'rgba(0, 184, 217, 0.1)',
-          tension: 0.4
-        },
-        {
-          label: 'Temperatura (°C)',
-          data: [],
-          borderColor: '#ff9800',
-          backgroundColor: 'rgba(255, 152, 0, 0.1)',
-          tension: 0.4,
-          yAxisID: 'y1'
-        }
-      ]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      interaction: { mode: 'index', intersect: false },
-      scales: {
-        y: { beginAtZero: true, max: 100, grid: { color: '#1e2f44' } },
-        y1: { position: 'right', max: 50, grid: { display: false } }
-      },
-      plugins: { legend: { labels: { color: '#fff' } } }
+    const tbody = document.getElementById("chillers-body");
+    if (!chillers.length) {
+      tbody.innerHTML = `<tr><td colspan="5" class="empty">No chiller data</td></tr>`;
+      return;
     }
-  });
-}
-
-// Datos simulados (para pruebas sin UPS)
-function updateSimulatedData() {
-  const simData = {
-    data: {
-      ups_load: 35 + Math.random() * 10,
-      battery_charge: 92 + Math.random() * 5,
-      temperature: 23 + Math.random() * 3,
-      runtime_remaining: 1500 + Math.random() * 300,
-      input_voltage: 220 + Math.random() * 5,
-      battery_voltage: 12.5 + Math.random() * 0.5
-    }
-  };
-  updateUPSDisplay(simData);
-  updateHistory(simData.data);
-    
-  // Simular alertas periódicas
-  if (Math.random() > 0.8) {
-    updateAlerts([{
-      severity: 'medium',
-      text: 'Simulación: Temperatura ligeramente elevada',
-      timestamp: new Date().toISOString()
-    }]);
+    tbody.innerHTML = chillers.map(ch => {
+      const statusChip = ch.degraded
+        ? `<span class="chip chip-danger">degraded</span>`
+        : `<span class="chip chip-ok">${ch.status}</span>`;
+      const degChip = ch.degraded
+        ? `<span class="chip chip-danger">YES</span>`
+        : `<span class="chip chip-ok">NO</span>`;
+      const copClass = ch.degraded ? ' style="color:#EF4444;font-weight:700"' : "";
+      return `<tr>
+        <td><strong>${ch.id}</strong></td>
+        <td${copClass}>${ch.cop}</td>
+        <td>${ch.power_kw}</td>
+        <td>${statusChip}</td>
+        <td>${degChip}</td>
+      </tr>`;
+    }).join("");
+  } catch {
+    document.getElementById("chillers-body").innerHTML =
+      `<tr><td colspan="5" class="empty">Failed to load</td></tr>`;
   }
-    
-  updatePredictions({
-    trend: Math.random() > 0.5 ? 'up' : 'down',
-    predicted_load: 40 + Math.random() * 20,
-    failure_probability: Math.random() * 0.3,
-    next_maintenance_days: 30 + Math.random() * 60
-  });
 }
 
-// Modal baterías
-function showBatteryForm() {
-  document.getElementById('battery-modal').style.display = 'block';
-  document.getElementById('change-date').valueAsDate = new Date();
+// ── Leaks ──
+async function fetchLeaks() {
+  try {
+    const r = await fetch(`${API}/leaks`);
+    const d = await r.json();
+    const leaks = d.leaks || [];
+
+    document.getElementById("leak-count").textContent = d.total;
+
+    const tbody = document.getElementById("leaks-body");
+    if (!leaks.length) {
+      tbody.innerHTML = `<tr><td colspan="5" class="empty">No active leaks</td></tr>`;
+      return;
+    }
+    tbody.innerHTML = leaks.map(l => {
+      const conf = l.confidence > 0
+        ? `${(l.confidence * 100).toFixed(0)}%`
+        : "—";
+      const srcChip = l.source === "database"
+        ? `<span class="chip chip-warn">DB</span>`
+        : `<span class="chip chip-ok">SIM</span>`;
+      return `<tr>
+        <td><strong>${l.room_id}</strong></td>
+        <td>${l.building}</td>
+        <td>${l.flow_lph}</td>
+        <td>${conf}</td>
+        <td>${srcChip}</td>
+      </tr>`;
+    }).join("");
+  } catch {
+    document.getElementById("leaks-body").innerHTML =
+      `<tr><td colspan="5" class="empty">Failed to load</td></tr>`;
+  }
 }
 
-function closeModal() {
-  document.getElementById('battery-modal').style.display = 'none';
-}
-
-// Formulario registro baterías
-document.getElementById('battery-form')?.addEventListener('submit', async (e) => {
+// ── Chat ──
+async function onChatSubmit(e) {
   e.preventDefault();
-    
-  const data = {
-    ups_id: 'ups-01',
-    change_date: document.getElementById('change-date').value,
-    battery_type: document.getElementById('battery-type').value,
-    notes: document.getElementById('notes').value
-  };
-    
-  try {
-    await fetch('http://localhost:8000/api/v1/battery/replaced', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
-    });
-        
-    alert('✅ Cambio registrado correctamente');
-    closeModal();
-        
-    // Actualizar historial
-    const historyDiv = document.getElementById('battery-history');
-    historyDiv.innerHTML = `
-      <div class="alert" style="background: #0d1b2b">
-        📅 Último cambio: ${data.change_date} (${data.battery_type})
-      </div>
-    `;
-        
-  } catch (error) {
-    alert('Error al registrar: ' + error.message);
-  }
-});
+  const input = document.getElementById("chat-input");
+  const msg = input.value.trim();
+  if (!msg) return;
 
-// Cerrar modal al hacer clic fuera
-window.onclick = (event) => {
-  const modal = document.getElementById('battery-modal');
-  if (event.target === modal) {
-    modal.style.display = 'none';
+  appendBubble(msg, "user");
+  input.value = "";
+
+  const btn = document.getElementById("chat-send");
+  btn.disabled = true;
+  btn.textContent = "…";
+
+  try {
+    const r = await fetch(`${API}/chat`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message: msg, language: "en" }),
+    });
+    const d = await r.json();
+    appendBubble(d.response, "daniela");
+  } catch {
+    appendBubble("Sorry, I could not reach the server. Please try again.", "daniela");
+  } finally {
+    btn.disabled = false;
+    btn.textContent = "Send";
   }
-};
+}
+
+function appendBubble(text, who) {
+  const log = document.getElementById("chat-log");
+  const div = document.createElement("div");
+  div.className = `chat-bubble ${who}`;
+  div.textContent = text;
+  log.appendChild(div);
+  log.scrollTop = log.scrollHeight;
+}

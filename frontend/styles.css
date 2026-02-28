@@ -1,4 +1,289 @@
-body { font-family: Arial, sans-serif; background:#f7f7f8; color:#222; }
-.container { max-width: 800px; margin: 36px auto; padding: 18px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
-pre { background:#f0f0f0; padding:12px; overflow:auto; }
-#status { margin-bottom: 12px; font-weight:600; }
+/* ── DANIELA Executive Dashboard ── */
+/* Color tokens */
+:root {
+  --navy:  #0D2137;
+  --navy2: #132D4A;
+  --gold:  #C49A28;
+  --gold-light: #E2C06E;
+  --white: #FFFFFF;
+  --gray:  #F4F5F7;
+  --text:  #1E293B;
+  --text2: #64748B;
+  --green: #22C55E;
+  --red:   #EF4444;
+  --orange:#F59E0B;
+  --radius: 10px;
+  --shadow: 0 2px 12px rgba(0,0,0,.08);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  background: var(--gray);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+/* ── HEADER ── */
+.top-bar {
+  background: var(--navy);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 32px;
+}
+.top-bar .brand h1 {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--gold);
+  margin: 0;
+}
+.top-bar .subtitle {
+  font-size: 13px;
+  color: var(--gold-light);
+  opacity: .85;
+}
+.top-bar .meta {
+  font-size: 13px;
+  color: rgba(255,255,255,.7);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.top-bar .meta strong { color: var(--white); }
+.top-bar .sep { opacity: .3; }
+
+/* ── HEALTH BAR ── */
+.health-bar {
+  background: var(--navy2);
+  padding: 8px 32px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--white);
+  background: rgba(255,255,255,.1);
+  transition: background .3s;
+}
+.pill::before {
+  content: "";
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--text2);
+  transition: background .3s;
+}
+.pill.ok::before   { background: var(--green); box-shadow: 0 0 6px var(--green); }
+.pill.fail::before { background: var(--red);   box-shadow: 0 0 6px var(--red); }
+.version {
+  margin-left: auto;
+  font-size: 12px;
+  color: rgba(255,255,255,.45);
+}
+
+/* ── KPI ROW ── */
+.kpi-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  padding: 20px 32px 0;
+}
+.kpi-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border-top: 3px solid var(--gold);
+}
+.kpi-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .8px;
+  color: var(--text2);
+  font-weight: 600;
+}
+.kpi-value {
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--navy);
+}
+.kpi-value small {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text2);
+}
+
+/* ── CARDS ── */
+.card {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 22px 24px;
+}
+.card h2 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ── MAIN GRID (chillers + leaks) ── */
+.main-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  padding: 16px 32px 0;
+}
+
+/* ── TABLES ── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+thead th {
+  text-align: left;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .6px;
+  color: var(--text2);
+  padding: 6px 10px;
+  border-bottom: 2px solid var(--gray);
+}
+tbody td {
+  padding: 9px 10px;
+  border-bottom: 1px solid var(--gray);
+  vertical-align: middle;
+}
+tbody tr:last-child td { border-bottom: none; }
+td.empty {
+  text-align: center;
+  color: var(--text2);
+  padding: 28px 0;
+  font-style: italic;
+}
+
+/* status / degraded chips */
+.chip {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.chip-ok     { background: #DCFCE7; color: #166534; }
+.chip-warn   { background: #FEF9C3; color: #854D0E; }
+.chip-danger { background: #FEE2E2; color: #991B1B; }
+
+/* badge (leak count) */
+.badge {
+  background: var(--gold);
+  color: var(--white);
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 12px;
+  padding: 1px 10px;
+  min-width: 22px;
+  text-align: center;
+}
+
+/* ── CHAT ── */
+.chat-card {
+  margin: 16px 32px 0;
+}
+.chat-log {
+  max-height: 260px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 4px 0 12px;
+}
+.chat-bubble {
+  padding: 10px 16px;
+  border-radius: 14px;
+  max-width: 80%;
+  font-size: 14px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+.chat-bubble.daniela {
+  background: var(--navy);
+  color: var(--white);
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+}
+.chat-bubble.user {
+  background: var(--gold);
+  color: var(--white);
+  align-self: flex-end;
+  border-bottom-right-radius: 4px;
+}
+
+.chat-form {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+.chat-form input {
+  flex: 1;
+  padding: 10px 16px;
+  border: 2px solid #E2E8F0;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color .2s;
+}
+.chat-form input:focus { border-color: var(--gold); }
+.chat-form button {
+  padding: 10px 24px;
+  background: var(--navy);
+  color: var(--gold);
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: .5px;
+  transition: background .2s;
+}
+.chat-form button:hover { background: var(--navy2); }
+.chat-form button:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+/* ── FOOTER ── */
+.footer {
+  text-align: center;
+  padding: 18px 32px 22px;
+  font-size: 12px;
+  color: var(--text2);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .kpi-row       { grid-template-columns: repeat(2, 1fr); }
+  .main-grid     { grid-template-columns: 1fr; }
+  .top-bar       { flex-direction: column; gap: 6px; text-align: center; }
+  .health-bar    { flex-wrap: wrap; justify-content: center; }
+  .chat-card     { margin: 16px 12px 0; }
+  .kpi-row,
+  .main-grid     { padding-left: 12px; padding-right: 12px; }
+}
