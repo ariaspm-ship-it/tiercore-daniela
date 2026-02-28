@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 **DANIELA** (Data Analytics Network for Energy Logistics & Infrastructure Assessment) — AI-powered facility management system for luxury resorts. Simulates and monitors water, electricity, and HVAC across 191 units (BCH-VILLA COLONY RESORT, Kempinski brand).
 
-**Current version: v0.3** — Context builder feeds real data to Claude agent, API serves all endpoints, dashboard consumes API.
+**Current version: v0.4** — Enterprise dashboard with charts, voice I/O, demo mode, daily briefing, COP prediction.
 
 ## Environment Setup
 
@@ -36,7 +36,10 @@ python main.py --no-api                               # simulation only, no API 
 python demo_investors.py
 python demo_investors.py --test --no-slow             # fast, no voice
 
-# Streamlit web dashboard (connects to API on :8000)
+# Enterprise HTML dashboard (open in browser, API must be running)
+# Open frontend/index.html directly — connects to API on :8000
+
+# Streamlit web dashboard (alternative, connects to API on :8000)
 streamlit run frontend/dashboard.py
 
 # Claude agent REPL (direct, no API)
@@ -64,25 +67,31 @@ pytest tests/test_ai.py             # leak detector + chiller optimizer
 ### Data Flow
 
 ```
-Simulator (191 units) → Device Models → Database (SQLite/PostgreSQL+TimescaleDB)
-                       ↓
+Simulator (191 units) -> Device Models -> Database (SQLite/PostgreSQL+TimescaleDB)
+                       |
               Context Builder (30s TTL cache)
               - Chiller status + degradation flags
               - Per-building consumption (elec + water)
               - Active alerts from DB (leaks, degradation)
               - Solar production
               - Financial impact ($extra/day)
-                       ↓
-              Claude Agent (Sonnet) ← Structured JSON context
+                       |
+              Claude Agent (Sonnet) <- Structured JSON context
               - 10-turn conversation history
               - Auto language detection (EN/ES)
               - Mock mode uses REAL simulator data
-                       ↓
+                       |
               FastAPI API (:8000/api/v1)
-              - GET /status, /chillers, /buildings, /leaks, /alerts, /health
+              - GET /status, /chillers, /buildings, /leaks, /alerts, /health, /briefing
               - POST /chat, /chat/clear
-                       ↓
-              Streamlit Dashboard → consumes API (fallback: direct imports)
+              - POST /demo/inject-leak, /demo/degrade-chiller, /demo/reset
+                       |
+              Enterprise Dashboard (frontend/index.html)
+              - Glassmorphism UI, Chart.js COP chart, building heatmap
+              - Voice I/O (Web Speech API), alert sounds
+              - Demo mode panel for live presentations
+              |
+              Streamlit Dashboard (frontend/dashboard.py) [alternative]
 ```
 
 ### Key Modules
@@ -95,13 +104,15 @@ Simulator (191 units) → Device Models → Database (SQLite/PostgreSQL+Timescal
 | `simulator/resort_simulator.py` | Drives ~2,100 logical points across all devices |
 | `devices/` | Device models: `Room`, `Villa`, `Chiller`, `HeatMachine`, `Inverter`, `ElectricalPanel` |
 | `ai/context_builder.py` | **Feeds Claude with real data** — chillers, buildings, alerts, financials |
-| `ai/claude_agent.py` | **Claude Sonnet interface** — system prompt, history, structured context injection |
-| `ai/leak_detector.py` | Nighttime flow analysis (2–5 AM), 3-night pattern, confidence score |
-| `ai/chiller_optimizer.py` | COP analysis, ML efficiency models, degradation detection (>8% loss) |
-| `api/routes.py` | FastAPI endpoints — status, chillers, buildings, leaks, alerts, chat |
+| `ai/claude_agent.py` | **Claude Sonnet interface** — system prompt, 10-turn history, structured context injection |
+| `ai/leak_detector.py` | Nighttime flow analysis (2-5 AM), 3-night pattern, confidence score |
+| `ai/chiller_optimizer.py` | COP analysis, ML efficiency models, degradation detection (>8%), **days-to-threshold prediction** |
+| `ai/briefing.py` | **Daily briefing generator** — 3-paragraph executive summary in Kempinski tone |
+| `api/routes.py` | FastAPI endpoints — status, chillers, buildings, leaks, alerts, chat, briefing, demo |
 | `generators/` | Factory functions for rooms, villas, buildings, BACnet/Modbus/M-Bus point catalogs |
 | `protocols/` | BACnet/IP, Modbus TCP, M-Bus (EN 13757) — simulated, ready for real hardware |
-| `frontend/dashboard.py` | Streamlit UI — consumes API, fallback to direct simulator |
+| `frontend/index.html` | **Enterprise dashboard** — glassmorphism, Chart.js, heatmap, voice, demo mode |
+| `frontend/dashboard.py` | Streamlit UI — alternative dashboard, consumes API |
 
 ### Configuration (`core/config.py`)
 
@@ -127,13 +138,17 @@ SQLite default (`daniela.db`). Set `DATABASE_URL` for PostgreSQL+TimescaleDB.
 
 All under `/api/v1`:
 - `GET /status` — full resort context (cached 30s)
-- `GET /chillers` — 3 RTAG chillers with COP, power, degradation flag
+- `GET /chillers` — 3 RTAG chillers with COP, power, degradation flag, **days_to_threshold**
 - `GET /buildings` — per-building electricity/water/leaks
-- `GET /leaks` — active water leak alerts
+- `GET /leaks` — active water leak alerts (DB + in-flight simulator leaks)
 - `GET /alerts` — all alerts last 24h
 - `GET /health` — system health check (simulator, DB, API key)
+- `GET /briefing` — executive daily briefing in Kempinski tone
 - `POST /chat` — send message to Daniela, get response
 - `POST /chat/clear` — clear conversation history
+- `POST /demo/inject-leak` — inject leak in Building B (demo)
+- `POST /demo/degrade-chiller` — degrade 2CH-2 COP by 20% (demo)
+- `POST /demo/reset` — reset simulator to normal state (demo)
 
 ### Claude Agent Behavior
 
@@ -146,6 +161,17 @@ The agent (me, Daniela):
 - Always ends with a next step or question
 - Uses TCI electricity rate of $0.25/kWh
 - In mock mode (no API key), uses REAL simulator data for responses
+
+### Enterprise Dashboard (`frontend/`)
+
+The HTML dashboard (`index.html` + `styles.css` + `dashboard.js`):
+- **Design**: Glassmorphism cards, Inter font, navy #0D2137 / gold #C49A28 / dark #080F1A
+- **COP Chart**: Real-time Chart.js line chart tracking all 3 chillers (20 data points)
+- **Building Heatmap**: A/B/C grid colored by electricity consumption, red pulse for active leaks
+- **Alert System**: Toast notifications + audio alert on new leaks or chiller degradation
+- **Voice I/O**: Web Speech API — mic button for voice input, SpeechSynthesis for Daniela responses
+- **Demo Mode**: Full demo sequence with inject-leak, degrade-chiller, reset (5s delays)
+- **Auto-refresh**: Every 30 seconds
 
 ## Key Environment Variables
 
