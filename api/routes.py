@@ -2,6 +2,7 @@
 # FastAPI REST router for Daniela — all endpoints return JSON with timestamp
 
 import os
+import random
 from datetime import datetime, timedelta
 from typing import Any, Dict, List, Optional
 
@@ -309,3 +310,77 @@ async def post_chat_clear() -> Dict[str, Any]:
     agent = get_agent()
     agent.clear_history()
     return {"timestamp": _now(), "message": "Conversation history cleared"}
+
+
+# ---------------------------------------------------------------------------
+# DEMO MODE endpoints
+# ---------------------------------------------------------------------------
+
+@router.post("/demo/inject-leak", summary="Inject a leak in Building B")
+async def demo_inject_leak() -> Dict[str, Any]:
+    """Forces fuga_activa=True on a random Building B room for demo."""
+    cb = get_context_builder()
+    if not cb.simulator:
+        raise HTTPException(status_code=503, detail="Simulator not running")
+
+    b_rooms = [r for r in cb.simulator.habitaciones if r.edificio == "B"]
+    if not b_rooms:
+        raise HTTPException(status_code=404, detail="No Building B rooms")
+
+    room = random.choice(b_rooms)
+    room.fuga_activa = True
+    ai_logger.info(f"[DEMO] Injected leak in {room.id}")
+    return {"timestamp": _now(), "message": f"Leak injected in room {room.id} (Building B)"}
+
+
+@router.post("/demo/degrade-chiller", summary="Degrade chiller 2CH-2 COP")
+async def demo_degrade_chiller() -> Dict[str, Any]:
+    """Reduces 2CH-2 COP by 20% for demo presentations."""
+    cb = get_context_builder()
+    if not cb.simulator:
+        raise HTTPException(status_code=503, detail="Simulator not running")
+
+    target = None
+    for ch in cb.simulator.chillers:
+        if ch.id == "2CH-2":
+            target = ch
+            break
+    if not target or not target.last_data:
+        raise HTTPException(status_code=404, detail="Chiller 2CH-2 not found")
+
+    from devices.chiller import ChillerData
+    old_cop = target.last_data.cop or 4.0
+    new_cop = round(old_cop * 0.8, 2)
+    degraded_data = ChillerData(
+        timestamp=datetime.now(),
+        temp_supply=target.last_data.temp_supply,
+        temp_return=target.last_data.temp_return,
+        power_kw=target.last_data.power_kw,
+        cooling_kw=round((target.last_data.power_kw or 70) * new_cop, 1),
+        cop=new_cop,
+        compressor_status=target.last_data.compressor_status,
+        alarm=True,
+        flow_m3h=target.last_data.flow_m3h,
+    )
+    target.update(degraded_data)
+    ai_logger.info(f"[DEMO] Degraded 2CH-2 COP: {old_cop} -> {new_cop}")
+    return {
+        "timestamp": _now(),
+        "message": f"Chiller 2CH-2 degraded: COP {old_cop} -> {new_cop}",
+    }
+
+
+@router.post("/demo/reset", summary="Reset simulator to normal state")
+async def demo_reset() -> Dict[str, Any]:
+    """Clears all injected leaks and runs a normal simulator step."""
+    cb = get_context_builder()
+    if not cb.simulator:
+        raise HTTPException(status_code=503, detail="Simulator not running")
+
+    for room in cb.simulator.habitaciones:
+        room.fuga_activa = False
+    cb.simulator.step()
+    # Clear context cache so next fetch is fresh
+    cb.last_update = None
+    ai_logger.info("[DEMO] Simulator reset to baseline")
+    return {"timestamp": _now(), "message": "Simulator reset to normal state"}
