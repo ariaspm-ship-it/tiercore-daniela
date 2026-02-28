@@ -217,6 +217,35 @@ class ChillerOptimizer:
             "confianza": 0
         }
 
+    def predict_days_to_threshold(self, chiller: Chiller) -> Optional[int]:
+        """
+        Estimates the number of days until this chiller's COP drops below
+        Config.UMBRAL_COP_MINIMO (3.5) based on linear trend of historical
+        COP readings.  Returns None if insufficient data or COP is stable/rising.
+        """
+        readings = [d.cop for d in chiller.history if d.cop and d.cop > 0]
+        if len(readings) < 20:
+            return None
+
+        x = np.arange(len(readings), dtype=float)
+        try:
+            slope, intercept = np.polyfit(x, readings, 1)
+        except Exception:
+            return None
+
+        if slope >= 0:
+            return None  # COP is stable or improving
+
+        current_cop = readings[-1]
+        if current_cop <= self.cop_minimo:
+            return 0  # already below threshold
+
+        steps_remaining = (self.cop_minimo - current_cop) / slope
+        # Each simulator step ≈ 5 minutes; convert to days
+        steps_per_day = 288  # 24h * 60min / 5min
+        days = steps_remaining / steps_per_day
+        return max(0, int(round(days)))
+
     def calcular_ahorro_potencial(self, chiller: Chiller, cop_objetivo: float) -> Tuple[float, float]:
         if not chiller.last_data or not chiller.last_data.power_kw:
             return (0, 0)

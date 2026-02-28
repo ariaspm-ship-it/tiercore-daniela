@@ -17,6 +17,15 @@ from core.database import db, Alerta
 from ai.context_builder import get_context_builder
 from ai.claude_agent import get_agent
 from ai.briefing import generate_briefing
+from ai.chiller_optimizer import ChillerOptimizer
+
+_chiller_optimizer: Optional[ChillerOptimizer] = None
+
+def _get_optimizer() -> ChillerOptimizer:
+    global _chiller_optimizer
+    if _chiller_optimizer is None:
+        _chiller_optimizer = ChillerOptimizer()
+    return _chiller_optimizer
 
 router = APIRouter()
 
@@ -131,17 +140,28 @@ async def get_chillers() -> Dict[str, Any]:
 
     if cb.simulator:
         try:
+            optimizer = _get_optimizer()
             status = await run_in_threadpool(cb.simulator.get_global_status)
             for ch in status.get("chillers", []):
                 cop = float(ch.get("cop") or 0.0)
                 power_kw = float(ch.get("power_kw") or 0.0)
+                chiller_id = ch.get("id")
+
+                # Find device object for prediction
+                dtt = None
+                for dev in cb.simulator.chillers:
+                    if dev.id == chiller_id:
+                        dtt = await run_in_threadpool(optimizer.predict_days_to_threshold, dev)
+                        break
+
                 chillers_out.append({
-                    "id": ch.get("id"),
+                    "id": chiller_id,
                     "cop": round(cop, 2),
                     "power_kw": round(power_kw, 1),
                     "status": ch.get("estado", "unknown"),
                     "degraded": bool(0 < cop < Config.UMBRAL_COP_MINIMO),
                     "cop_minimum": Config.UMBRAL_COP_MINIMO,
+                    "days_to_threshold": dtt,
                 })
         except Exception as exc:
             ai_logger.error(f"/chillers simulator error: {exc}")
