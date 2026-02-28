@@ -16,6 +16,7 @@ from core.logger import ai_logger
 from core.database import db, Alerta
 from ai.context_builder import get_context_builder
 from ai.claude_agent import get_agent
+from ai.briefing import generate_briefing
 
 router = APIRouter()
 
@@ -310,6 +311,21 @@ async def post_chat_clear() -> Dict[str, Any]:
     agent = get_agent()
     agent.clear_history()
     return {"timestamp": _now(), "message": "Conversation history cleared"}
+
+
+# ---------------------------------------------------------------------------
+# GET /briefing — Executive daily briefing
+# ---------------------------------------------------------------------------
+
+@router.get("/briefing", summary="Executive daily briefing")
+async def get_briefing() -> Dict[str, Any]:
+    """3-paragraph executive summary in Kempinski hospitality tone."""
+    try:
+        result = await run_in_threadpool(generate_briefing)
+        return result
+    except Exception as exc:
+        ai_logger.error(f"/briefing error: {exc}")
+        raise HTTPException(status_code=503, detail="Briefing generation failed")
 
 
 # ---------------------------------------------------------------------------
