@@ -176,11 +176,13 @@ async def get_chillers() -> Dict[str, Any]:
 
 @router.get("/leaks", summary="Active water leak alerts")
 async def get_leaks() -> Dict[str, Any]:
-    """Active (unresolved) leak alerts from the last 24 hours."""
+    """Active (unresolved) leak alerts from the last 24 hours,
+    including in-flight leaks detected by the simulator in real time."""
+    # 1. DB-persisted leaks (existing behaviour)
     all_alerts = await run_in_threadpool(_query_alerts_sync, 100, 24)
     fugas = [a for a in all_alerts if a["tipo"] == "fuga" and not a["resuelta"]]
 
-    leaks_out = [
+    leaks_out: List[Dict[str, Any]] = [
         {
             "alert_id": f["alert_id"],
             "room_id": f["dispositivo_id"],
@@ -190,9 +192,35 @@ async def get_leaks() -> Dict[str, Any]:
             "severity": f["severidad"],
             "message": f["mensaje"],
             "timestamp": f["timestamp"],
+            "source": "database",
         }
         for f in fugas
     ]
+
+    db_room_ids = {l["room_id"] for l in leaks_out}
+
+    # 2. In-flight simulator leaks (same source as /status)
+    cb = get_context_builder()
+    await run_in_threadpool(cb._ensure_and_step_simulator)
+
+    if cb.simulator:
+        for room in cb.simulator.habitaciones:
+            if not getattr(room, "fuga_activa", False):
+                continue
+            if room.id in db_room_ids:
+                continue
+            night_flow = room.get_night_flow()
+            leaks_out.append({
+                "alert_id": f"SIM-{room.id}",
+                "room_id": room.id,
+                "building": room.edificio,
+                "flow_lph": round(night_flow, 1),
+                "confidence": 0.0,
+                "severity": "media",
+                "message": f"Posible fuga detectada en {room.id} (simulador)",
+                "timestamp": _now(),
+                "source": "simulator",
+            })
 
     return {
         "timestamp": _now(),
