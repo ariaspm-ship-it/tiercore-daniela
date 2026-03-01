@@ -16,8 +16,9 @@ from core.logger import ai_logger
 from core.database import db, Alerta
 from ai.context_builder import get_context_builder
 from ai.claude_agent import get_agent
-from ai.briefing import generate_briefing
+from ai.briefing import generate_briefing, get_latest_briefing
 from ai.chiller_optimizer import ChillerOptimizer
+from ai.proactive_monitor import alert_store, get_monitor
 
 _chiller_optimizer: Optional[ChillerOptimizer] = None
 
@@ -338,7 +339,7 @@ async def post_chat_clear() -> Dict[str, Any]:
 # ---------------------------------------------------------------------------
 
 @router.get("/briefing", summary="Executive daily briefing")
-async def get_briefing() -> Dict[str, Any]:
+async def get_briefing_endpoint() -> Dict[str, Any]:
     """3-paragraph executive summary in Kempinski hospitality tone."""
     try:
         result = await run_in_threadpool(generate_briefing)
@@ -346,6 +347,61 @@ async def get_briefing() -> Dict[str, Any]:
     except Exception as exc:
         ai_logger.error(f"/briefing error: {exc}")
         raise HTTPException(status_code=503, detail="Briefing generation failed")
+
+
+@router.get("/briefing/latest", summary="Latest daily briefing (cached)")
+async def get_briefing_latest() -> Dict[str, Any]:
+    """Returns most recent briefing; generates on demand if none today."""
+    try:
+        result = await run_in_threadpool(get_latest_briefing)
+        return result
+    except Exception as exc:
+        ai_logger.error(f"/briefing/latest error: {exc}")
+        raise HTTPException(status_code=503, detail="Briefing generation failed")
+
+
+# ---------------------------------------------------------------------------
+# GET /proactive — Unacknowledged proactive alerts
+# ---------------------------------------------------------------------------
+
+@router.get("/proactive", summary="Unacknowledged proactive alerts")
+async def get_proactive() -> Dict[str, Any]:
+    """Returns unacknowledged alerts ordered by severity (CRITICAL > HIGH > INFO)."""
+    alerts = alert_store.get_unacknowledged()
+    return {
+        "timestamp": _now(),
+        "alerts": alerts,
+        "total": len(alerts),
+    }
+
+
+# ---------------------------------------------------------------------------
+# POST /proactive/{alert_id}/acknowledge — Mark alert as read
+# ---------------------------------------------------------------------------
+
+@router.post("/proactive/{alert_id}/acknowledge", summary="Acknowledge a proactive alert")
+async def acknowledge_proactive(alert_id: str) -> Dict[str, Any]:
+    """Marks a proactive alert as acknowledged."""
+    ok = alert_store.acknowledge(alert_id)
+    if not ok:
+        raise HTTPException(status_code=404, detail=f"Alert {alert_id} not found")
+    return {"timestamp": _now(), "message": f"Alert {alert_id} acknowledged"}
+
+
+# ---------------------------------------------------------------------------
+# POST /proactive/check — Force an immediate threshold check
+# ---------------------------------------------------------------------------
+
+@router.post("/proactive/check", summary="Force immediate threshold check")
+async def force_proactive_check() -> Dict[str, Any]:
+    """Runs a threshold check immediately and returns any new alerts."""
+    monitor = get_monitor()
+    new_alerts = await run_in_threadpool(monitor.check_now)
+    return {
+        "timestamp": _now(),
+        "new_alerts": new_alerts,
+        "total_new": len(new_alerts),
+    }
 
 
 # ---------------------------------------------------------------------------

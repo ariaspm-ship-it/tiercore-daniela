@@ -9,7 +9,7 @@ class Config:
     
     # Proyecto
     PROYECTO_NOMBRE = "BCH-VILLA COLONY RESORT"
-    PROYECTO_VERSION = "0.1.0"
+    PROYECTO_VERSION = "0.5.0"
     
     # Rutas
     BASE_DIR = Path(__file__).parent.parent

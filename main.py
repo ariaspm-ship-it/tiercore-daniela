@@ -22,6 +22,8 @@ from core.config import Config
 from simulator.resort_simulator import ResortSimulator
 from ai.leak_detector import LeakDetector
 from ai.chiller_optimizer import ChillerOptimizer
+from ai.proactive_monitor import get_monitor
+from ai.briefing import get_scheduler
 
 
 def start_api_server(host: str = "0.0.0.0", port: int = 8000):
@@ -52,7 +54,7 @@ async def run_orchestrator(
     - Guarda alertas en la base de datos
     """
     main_logger.info("=" * 60)
-    main_logger.info("DANIELA v0.3 — Orquestador principal")
+    main_logger.info("DANIELA v0.5 — Proactive AI Monitor")
     main_logger.info("=" * 60)
 
     # Inicializar sistemas
@@ -76,6 +78,14 @@ async def run_orchestrator(
         )
         api_thread.start()
         main_logger.info("API thread iniciado en :8000")
+
+    # Start proactive monitor (threshold checks every 5 min)
+    proactive_monitor = get_monitor()
+    proactive_monitor.start()
+
+    # Start briefing scheduler (daily at 08:00)
+    briefing_scheduler = get_scheduler()
+    briefing_scheduler.start()
 
     main_logger.info("=" * 60)
     main_logger.info("Simulación en marcha")
@@ -136,7 +146,7 @@ async def run_orchestrator(
 
 
 def parse_args():
-    parser = argparse.ArgumentParser(description="DANIELA v0.3 Orquestador")
+    parser = argparse.ArgumentParser(description="DANIELA v0.5 — Proactive AI Monitor")
     parser.add_argument(
         "--steps", type=int, default=288,
         help="Pasos de simulación (default: 288 = 24h simuladas)"

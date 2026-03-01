@@ -3,14 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DANIELA — BCH Villa Colony Resort</title>
+  <title>DANIELA v0.5 — BCH Villa Colony Resort</title>
   <link rel="stylesheet" href="styles.css">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
 </head>
 <body>
-
-  <!-- Alert toast -->
-  <div class="alert-toast" id="alert-toast"></div>
 
   <!-- ───────── HEADER ───────── -->
   <header class="top-bar">
@@ -18,130 +14,31 @@
       <h1>DANIELA</h1>
       <span class="subtitle">BCH Villa Colony Resort &middot; Kempinski</span>
     </div>
-    <div class="meta">
-      <span id="clock"></span>
-      <span class="sep">|</span>
-      <span>Last update: <strong id="last-update">--:--:--</strong></span>
+    <div class="header-right">
+      <div class="health-pills">
+        <span class="pill" id="pill-sim">Simulator</span>
+        <span class="pill" id="pill-db">Database</span>
+        <span class="pill" id="pill-key">API Key</span>
+      </div>
+      <span class="clock" id="clock">--:--:--</span>
     </div>
   </header>
 
-  <!-- ───────── HEALTH BAR ───────── -->
-  <section class="health-bar" id="health-bar">
-    <span class="pill" id="pill-sim">Simulator</span>
-    <span class="pill" id="pill-db">Database</span>
-    <span class="pill" id="pill-key">API Key</span>
-    <span class="version" id="version-tag"></span>
-  </section>
+  <!-- ───────── FEED ───────── -->
+  <main class="feed" id="feed">
+    <div class="feed-empty" id="feed-empty">
+      Daniela is monitoring 1,438 BMS points&hellip;<br>
+      <span class="feed-empty-sub">Alerts will appear here automatically.</span>
+    </div>
+  </main>
 
-  <!-- ───────── KPI CARDS ───────── -->
-  <section class="kpi-row">
-    <div class="kpi-card fade-in fade-in-1">
-      <span class="kpi-label">Total Units</span>
-      <span class="kpi-value" id="kpi-units">--</span>
-    </div>
-    <div class="kpi-card fade-in fade-in-2">
-      <span class="kpi-label">Active Chillers</span>
-      <span class="kpi-value" id="kpi-chillers">--</span>
-    </div>
-    <div class="kpi-card fade-in fade-in-3">
-      <span class="kpi-label">Solar Production</span>
-      <span class="kpi-value" id="kpi-solar">--<small>kW</small></span>
-    </div>
-    <div class="kpi-card fade-in fade-in-4">
-      <span class="kpi-label">Total Electricity</span>
-      <span class="kpi-value" id="kpi-elec">--<small>kWh</small></span>
-    </div>
-  </section>
-
-  <!-- ───────── COP CHART ───────── -->
-  <section class="chart-row">
-    <div class="card fade-in">
-      <h2><span class="icon">&#9889;</span> Chiller COP — Real-Time</h2>
-      <div class="chart-wrap">
-        <canvas id="cop-chart"></canvas>
-      </div>
-    </div>
-  </section>
-
-  <!-- ───────── BUILDING HEATMAP ───────── -->
-  <section class="heatmap-row">
-    <div class="card fade-in">
-      <h2><span class="icon">&#9632;</span> Building Consumption Heatmap</h2>
-      <div class="heatmap-grid" id="heatmap-grid">
-        <div class="hm-building level-low">
-          <span class="hm-label">A</span>
-          <span class="hm-detail">119 units</span>
-          <span class="hm-kwh">-- kWh</span>
-        </div>
-        <div class="hm-building level-low">
-          <span class="hm-label">B</span>
-          <span class="hm-detail">41 units</span>
-          <span class="hm-kwh">-- kWh</span>
-        </div>
-        <div class="hm-building level-low">
-          <span class="hm-label">C</span>
-          <span class="hm-detail">27 units</span>
-          <span class="hm-kwh">-- kWh</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ───────── CHILLERS + LEAKS TABLES ───────── -->
-  <section class="main-grid">
-    <div class="card fade-in">
-      <h2><span class="icon">&#10052;</span> Chillers</h2>
-      <table>
-        <thead>
-          <tr><th>ID</th><th>COP</th><th>Power</th><th>Status</th><th>Degraded</th></tr>
-        </thead>
-        <tbody id="chillers-body">
-          <tr><td colspan="5" class="empty">Loading&hellip;</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="card fade-in">
-      <h2><span class="icon">&#128167;</span> Active Leaks <span class="badge" id="leak-count">0</span></h2>
-      <table>
-        <thead>
-          <tr><th>Room</th><th>Building</th><th>Flow</th><th>Confidence</th><th>Source</th></tr>
-        </thead>
-        <tbody id="leaks-body">
-          <tr><td colspan="5" class="empty">No active leaks</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <!-- ───────── DEMO MODE ───────── -->
-  <section class="demo-bar">
-    <div class="card demo-card fade-in">
-      <h2><span class="icon">&#127916;</span> Demo Mode</h2>
-      <button class="demo-btn" id="btn-demo-full" onclick="runFullDemo()">Run Full Demo</button>
-      <button class="demo-btn" id="btn-demo-leak" onclick="demoAction('inject-leak')">Inject Leak</button>
-      <button class="demo-btn" id="btn-demo-chiller" onclick="demoAction('degrade-chiller')">Degrade Chiller</button>
-      <button class="demo-btn" id="btn-demo-reset" onclick="demoAction('reset')">Reset</button>
-      <span class="demo-status" id="demo-status"></span>
-    </div>
-  </section>
-
-  <!-- ───────── CHAT PANEL ───────── -->
-  <section class="chat-section">
-    <div class="card fade-in">
-      <h2><span class="icon">&#128172;</span> Chat with Daniela</h2>
-      <div class="chat-log" id="chat-log">
-        <div class="chat-bubble daniela">Hello! I'm Daniela, your facility intelligence assistant. Ask me anything about the resort.</div>
-      </div>
-      <form class="chat-form" id="chat-form">
-        <button type="button" class="mic-btn" id="mic-btn" title="Voice input">&#127908;</button>
-        <input type="text" id="chat-input" placeholder="Ask Daniela about the resort&hellip;" autocomplete="off">
-        <button type="submit" id="chat-send">Send</button>
-      </form>
-    </div>
-  </section>
-
-  <footer class="footer">
-    DANIELA v<span id="footer-version">0.1.0</span> &mdash; Data Analytics Network for Energy Logistics &amp; Infrastructure Assessment
+  <!-- ───────── INPUT BAR ───────── -->
+  <footer class="input-bar">
+    <form class="input-form" id="input-form">
+      <button type="button" class="mic-btn" id="mic-btn" title="Voice input">&#127908;</button>
+      <input type="text" id="user-input" placeholder="Ask Daniela anything&hellip;" autocomplete="off">
+      <button type="submit" class="send-btn" id="send-btn">&#10148;</button>
+    </form>
   </footer>
 
   <script src="dashboard.js"></script>
