@@ -152,13 +152,17 @@ def _check_thresholds(context: Dict[str, Any]) -> List[ProactiveAlert]:
                     ),
                 ))
 
-    # 3. Active leaks
+    # 3. Active leaks (deduplicate by device)
     active_leaks = resort.get("active_leaks", 0)
     if active_leaks > 0:
         leak_alerts = [a for a in active_alerts_ctx if a.get("type") == "fuga"]
+        seen_devices: set = set()
         for la in leak_alerts:
-            flow = la.get("flow_lph", 0)
             device = la.get("device", "unknown")
+            if device in seen_devices:
+                continue
+            seen_devices.add(device)
+            flow = la.get("flow_lph", 0)
             severity = SEVERITY_CRITICAL if flow > 50 else SEVERITY_HIGH
             alerts.append(ProactiveAlert(
                 severity=severity,
