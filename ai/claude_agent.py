@@ -1,5 +1,5 @@
 # ai/claude_agent.py
-# Agente conversacional Daniela — el cerebro del sistema
+# Daniela v0.5 — proactive facility intelligence agent
 
 import os
 from typing import Dict, List, Optional, Any

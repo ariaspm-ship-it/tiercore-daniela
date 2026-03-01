@@ -12,13 +12,13 @@ Las propiedades premium operan con BMS fragmentados por protocolo/fabricante, co
 - Optimización de chillers con estimación de ahorro diario
 - Arquitectura modular para escalar protocolos y analítica
 
-## Estado actual (Feb 2026)
-- Prototipo funcional v0.2
-- 28 archivos Python y ~3.4k LOC
-- 2 módulos IA operativos (Leak Detector, Chiller Optimizer)
-- 2 protocolos base (BACnet/IP, Modbus)
-- 3 suites de tests
-- Simulación de 191 viviendas y equipos críticos
+## Estado actual (Mar 2026)
+- Sistema funcional v0.5 — IA proactiva que inicia conversación
+- 6 módulos IA operativos (Proactive Monitor, Briefing Scheduler, Claude Agent, Leak Detector, Chiller Optimizer, Context Builder)
+- 4 protocolos (BACnet/IP, Modbus, M-Bus, simulación)
+- API REST completa (FastAPI, 15 endpoints)
+- Dashboard proactivo: Daniela habla sin que le pregunten
+- Simulación de 191 viviendas, 1,438 puntos BMS, 3 chillers RTAG 573kW
 
 ## Valor para cliente
 - Menor costo energético y de agua

@@ -157,7 +157,7 @@ def test_chiller_optimizer_quick():
 
 
 def run_all_tests():
-    print("\n🚀 INICIANDO TESTS RÁPIDOS - DANIELA v0.2")
+    print("\n🚀 INICIANDO TESTS RÁPIDOS - DANIELA v0.5")
     print("=" * 60)
 
     tests = [

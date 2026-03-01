@@ -4,7 +4,7 @@
 - DANIELA — Infrastructure Kernel para hoteles y resorts de lujo
 - Subtítulo: IA aplicada a eficiencia operativa, agua y energía
 - Proyecto piloto: BCH-Villa Colony Resort (Kempinski), Turks & Caicos
-- Estado: prototipo funcional v0.2
+- Estado: sistema funcional v0.5 — IA proactiva
 
 Notas del presentador:
 - Abrir con problema concreto: costos crecientes de energía/agua y operación fragmentada BMS.
@@ -28,18 +28,16 @@ Datos sugeridos en slide:
 Mensaje clave:
 - “No reemplaza el BMS: lo vuelve inteligente y accionable.”
 
-## Slide 4 — Producto hoy (v0.2)
-- 28 archivos Python, ~3.4k LOC, pruebas automatizadas
-- Simulación operativa de 191 viviendas y equipos críticos
-- Módulos IA funcionales:
-  - Leak Detector
-  - Chiller Optimizer
-- Protocolos base implementados:
-  - BACnet/IP (simulado + estructura real)
-  - Modbus (simulado + estructura real)
+## Slide 4 — Producto hoy (v0.5)
+- Sistema proactivo: Daniela monitorea e inicia conversación sin que le pregunten
+- 191 viviendas, 1,438 puntos BMS, 3 chillers RTAG 573kW
+- 6 módulos IA: Proactive Monitor, Briefing Scheduler, Claude Agent, Leak Detector, Chiller Optimizer, Context Builder
+- API REST completa (FastAPI, 15 endpoints)
+- Frontend proactivo: feed de alertas con severidad, botones de acción, voz
+- 4 protocolos: BACnet/IP, Modbus, M-Bus, simulación
 
 Activos técnicos:
-- Logging centralizado, capa de persistencia, tests funcionales.
+- Conocimiento HVAC, fugas y costes embebido en el agente. Tests automatizados. CI-ready.
 
 ## Slide 5 — Tracción técnica y validación
 - Habitación/viviendas corregidas: 187 aptos + 4 villas

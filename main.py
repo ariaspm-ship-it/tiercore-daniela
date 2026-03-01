@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# DANIELA v0.3 — Orquestador principal
+# DANIELA v0.5 — Orquestador principal
 #
 # Levanta TODOS los sistemas:
 # 1. Simulador (o hardware cuando esté disponible)
