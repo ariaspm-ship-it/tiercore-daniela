@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DANIELA — BCH Villa Colony Resort · Kempinski</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ── Reset + Base ─────────────────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#080F1A;--bg2:#0E1726;--navy:#0D2137;--navy2:#132D4A;--navy-light:#1A3A5C;
+  --gold:#C49A28;--gold-light:#E2C06E;--gold-dim:rgba(196,154,40,.15);
+  --white:#FFF;--gray:#94A3B8;--gray-dark:#475569;--text:#E2E8F0;--text2:#94A3B8;
+  --green:#22C55E;--green-dim:rgba(34,197,94,.12);
+  --red:#EF4444;--red-dim:rgba(239,68,68,.12);
+  --orange:#F59E0B;--orange-dim:rgba(245,158,11,.12);
+  --blue:#3B82F6;--blue-dim:rgba(59,130,246,.12);
+  --radius:12px;--radius-sm:8px;
+  --glass:rgba(14,23,38,.6);--glass-border:rgba(255,255,255,.06);
+  --shadow:0 8px 32px rgba(0,0,0,.35);--tr:.3s cubic-bezier(.4,0,.2,1);
+}
+html,body{height:100%;overflow:hidden}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);display:flex;flex-direction:column;-webkit-font-smoothing:antialiased}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:var(--navy2);border-radius:3px}
+
+/* ── Animations ───────────────────────────────────────────────────── */
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pulse-red{0%,100%{opacity:.7}50%{opacity:1}}
+@keyframes pulse-border{0%,100%{box-shadow:0 0 0 0 rgba(239,68,68,.3)}50%{box-shadow:0 0 12px 2px rgba(239,68,68,.2)}}
+@keyframes breathe{0%,100%{opacity:.5}50%{opacity:1}}
+@keyframes ripple{0%{r:3;opacity:.8}100%{r:10;opacity:0}}
+
+/* ── Header ───────────────────────────────────────────────────────── */
+.header{background:linear-gradient(135deg,var(--navy),var(--bg2));border-bottom:1px solid var(--glass-border);display:flex;align-items:center;justify-content:space-between;padding:10px 24px;flex-shrink:0;z-index:100}
+.header .brand h1{font-size:20px;font-weight:800;letter-spacing:3px;color:var(--gold);text-shadow:0 0 30px rgba(196,154,40,.2)}
+.header .subtitle{font-size:10px;font-weight:500;color:var(--gold-light);opacity:.7;letter-spacing:.5px}
+.header-right{display:flex;align-items:center;gap:14px}
+.pills{display:flex;gap:6px}
+.pill{display:inline-flex;align-items:center;gap:4px;padding:2px 10px;border-radius:20px;font-size:9px;font-weight:600;color:var(--text2);background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06)}
+.pill::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gray-dark)}
+.pill.ok::before{background:var(--green);box-shadow:0 0 6px var(--green)}.pill.ok{color:var(--green)}
+.pill.fail::before{background:var(--red);box-shadow:0 0 6px var(--red)}.pill.fail{color:var(--red)}
+.clock{font-size:13px;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:1px}
+
+/* ── Main Layout ──────────────────────────────────────────────────── */
+.main{flex:1;display:flex;overflow:hidden}
+.map-panel{flex:0 0 60%;display:flex;flex-direction:column;border-right:1px solid var(--glass-border);position:relative;overflow:hidden}
+.feed-panel{flex:0 0 40%;display:flex;flex-direction:column;min-width:0}
+
+/* ── Map ──────────────────────────────────────────────────────────── */
+.map-header{padding:12px 20px 6px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:var(--gold);display:flex;justify-content:space-between;align-items:center}
+.map-header .map-stats{font-weight:500;color:var(--text2);text-transform:none;letter-spacing:0;font-size:10px}
+.map-wrap{flex:1;padding:8px 16px 12px;display:flex;align-items:center;justify-content:center}
+.map-wrap svg{width:100%;height:100%;max-height:100%}
+
+/* SVG styles */
+.bld-label{font-size:11px;font-weight:700;fill:var(--gold);letter-spacing:1px}
+.bld-sublabel{font-size:7px;font-weight:500;fill:var(--text2)}
+.room-rect{stroke:rgba(255,255,255,.08);stroke-width:.3;cursor:pointer;transition:all .2s}
+.room-rect:hover{stroke:var(--gold);stroke-width:1;filter:brightness(1.4)}
+.room-ok{fill:rgba(34,197,94,.35)}
+.room-alert{fill:rgba(245,158,11,.5)}
+.room-critical{fill:rgba(239,68,68,.6);animation:pulse-red 1.2s ease-in-out infinite}
+.room-offline{fill:rgba(71,85,105,.25)}
+.chiller-box{fill:var(--navy2);stroke:rgba(255,255,255,.1);stroke-width:.5;rx:3;cursor:pointer}
+.chiller-box:hover{stroke:var(--gold);stroke-width:1}
+.chiller-label{font-size:7px;font-weight:600;fill:var(--text2)}
+.chiller-cop{font-size:10px;font-weight:800;fill:var(--green)}
+.chiller-cop.degraded{fill:var(--red)}
+.villa-shape{fill:rgba(196,154,40,.2);stroke:var(--gold);stroke-width:.5;rx:3;cursor:pointer}
+.villa-shape:hover{stroke:var(--gold-light);stroke-width:1.5}
+.villa-label{font-size:7px;font-weight:700;fill:var(--gold-light)}
+.solar-rect{fill:rgba(59,130,246,.25);stroke:var(--blue);stroke-width:.4;rx:2}
+.solar-label{font-size:7px;font-weight:600;fill:var(--blue)}
+.zone-label{font-size:8px;font-weight:600;fill:var(--gray-dark);letter-spacing:.5px}
+.water-line{stroke:rgba(59,130,246,.3);stroke-width:.5;stroke-dasharray:3,3;fill:none}
+.ground{fill:rgba(34,197,94,.04);stroke:rgba(34,197,94,.08);stroke-width:.3}
+.beach{fill:rgba(196,154,40,.06)}
+.ocean{fill:rgba(59,130,246,.05)}
+
+/* ── Feed Panel ───────────────────────────────────────────────────── */
+.feed-header{padding:12px 18px 6px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:var(--gold);border-bottom:1px solid var(--glass-border)}
+.feed{flex:1;overflow-y:auto;padding:10px 14px;display:flex;flex-direction:column;gap:8px}
+.feed-empty{text-align:center;color:var(--gray-dark);font-size:12px;margin:auto;animation:breathe 3s ease-in-out infinite;line-height:2}
+
+/* Feed message */
+.msg{background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--radius-sm);padding:12px 14px;animation:fadeIn .4s ease-out}
+.msg.sev-CRITICAL{border-left:3px solid var(--red);animation:fadeIn .4s ease-out,pulse-border 2s infinite}
+.msg.sev-HIGH{border-left:3px solid var(--orange)}
+.msg.sev-INFO{border-left:3px solid var(--green)}
+.msg.from-user{background:linear-gradient(135deg,var(--gold),#D4A832);color:var(--bg);align-self:flex-end;border-left:none;border-radius:var(--radius-sm) var(--radius-sm) 2px var(--radius-sm);max-width:85%}
+.msg.from-daniela{border-left:3px solid var(--gold);align-self:flex-start;max-width:95%}
+.msg-meta{display:flex;align-items:center;gap:8px;margin-bottom:5px;font-size:9px;color:var(--text2);text-transform:uppercase;letter-spacing:.7px;font-weight:600}
+.msg.from-user .msg-meta{color:rgba(0,0,0,.5)}
+.sev-chip{padding:1px 6px;border-radius:3px;font-size:8px;font-weight:700}
+.sev-chip.CRITICAL{background:var(--red-dim);color:var(--red)}
+.sev-chip.HIGH{background:var(--orange-dim);color:var(--orange)}
+.sev-chip.INFO{background:var(--green-dim);color:var(--green)}
+.msg-body{font-size:12px;line-height:1.6;white-space:pre-wrap}
+.msg.from-user .msg-body{color:var(--bg);font-weight:500}
+.msg-actions{margin-top:8px;display:flex;gap:6px;flex-wrap:wrap}
+.act-btn{padding:5px 14px;border-radius:6px;border:1px solid rgba(255,255,255,.1);background:var(--bg);color:var(--text);font-size:10px;font-weight:600;font-family:'Inter',sans-serif;cursor:pointer;transition:all var(--tr)}
+.act-btn:hover{border-color:var(--gold);color:var(--gold)}.act-btn.done{border-color:var(--green);color:var(--green);cursor:default}
+
+/* Input bar */
+.input-bar{border-top:1px solid var(--glass-border);padding:10px 14px;flex-shrink:0}
+.input-form{display:flex;gap:8px}
+.input-form input{flex:1;padding:10px 14px;background:var(--bg);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius-sm);font-size:12px;font-family:'Inter',sans-serif;color:var(--text);outline:none}
+.input-form input::placeholder{color:var(--gray-dark)}
+.input-form input:focus{border-color:var(--gold)}
+.send-btn,.mic-btn{width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;font-size:16px;transition:all var(--tr)}
+.send-btn{background:linear-gradient(135deg,var(--gold),#D4A832);color:var(--bg);border:none;font-size:14px}
+.send-btn:hover{filter:brightness(1.15)}.send-btn:disabled{opacity:.4;cursor:not-allowed}
+.mic-btn{background:var(--bg);color:var(--text2)}.mic-btn:hover{border-color:var(--gold);color:var(--gold)}
+.mic-btn.listening{border-color:var(--gold);color:var(--gold);animation:pulse-border 1.2s infinite}
+.mic-btn.unsupported{opacity:.2;cursor:not-allowed}
+
+/* ── Map info tooltip ─────────────────────────────────────────────── */
+.map-tooltip{position:absolute;bottom:12px;left:16px;right:16px;background:var(--glass);backdrop-filter:blur(16px);border:1px solid var(--glass-border);border-radius:var(--radius-sm);padding:10px 14px;font-size:11px;line-height:1.5;color:var(--text);display:none;z-index:10;animation:fadeIn .2s ease-out}
+.map-tooltip.show{display:block}
+.map-tooltip strong{color:var(--gold)}
+
+/* ── Responsive ───────────────────────────────────────────────────── */
+@media(max-width:900px){
+  .main{flex-direction:column}
+  .map-panel{flex:0 0 50%;border-right:none;border-bottom:1px solid var(--glass-border)}
+  .feed-panel{flex:1}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══ -->
+<header class="header">
+  <div class="brand">
+    <h1>DANIELA</h1>
+    <span class="subtitle">BCH Villa Colony Resort · Kempinski</span>
+  </div>
+  <div class="header-right">
+    <div class="pills">
+      <span class="pill" id="p-sim">Simulator</span>
+      <span class="pill" id="p-db">Database</span>
+      <span class="pill" id="p-ai">AI</span>
+    </div>
+    <span class="clock" id="clock">--:--:--</span>
+  </div>
+</header>
+
+<!-- ═══ MAIN ═══ -->
+<div class="main">
+
+  <!-- ─── MAP PANEL ─── -->
+  <div class="map-panel">
+    <div class="map-header">
+      <span>BCH Resort — Masterplan</span>
+      <span class="map-stats" id="map-stats">191 units · 1,438 BMS points</span>
+    </div>
+    <div class="map-wrap" id="map-wrap"></div>
+    <div class="map-tooltip" id="map-tooltip"></div>
+  </div>
+
+  <!-- ─── FEED PANEL ─── -->
+  <div class="feed-panel">
+    <div class="feed-header">Daniela — Proactive Feed</div>
+    <div class="feed" id="feed">
+      <div class="feed-empty" id="feed-empty">Monitoring 1,438 BMS points&hellip;<br><span style="font-size:10px;opacity:.6">Alerts appear here automatically</span></div>
+    </div>
+    <div class="input-bar">
+      <form class="input-form" id="input-form">
+        <button type="button" class="mic-btn" id="mic-btn" title="Voice input">&#127908;</button>
+        <input type="text" id="user-input" placeholder="Ask Daniela anything…" autocomplete="off">
+        <button type="submit" class="send-btn" id="send-btn">&#10148;</button>
+      </form>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// ═══════════════════════════════════════════════════════════════════
+// DANIELA Enterprise Dashboard — self-contained
+// ═══════════════════════════════════════════════════════════════════
+
+const API = "http://localhost:8000/api/v1";
+const POLL_MS = 30000;
+let backendOnline = false;
+let knownAlertIds = new Set();
+let firstLoad = true;
+
+// ── State ────────────────────────────────────────────────────────
+let state = {
+  chillers: [
+    { id:"2CH-1", cop:4.21, power_kw:68, status:"ok", degraded:false },
+    { id:"2CH-2", cop:3.95, power_kw:72, status:"ok", degraded:false },
+    { id:"2CH-3", cop:4.08, power_kw:55, status:"ok", degraded:false },
+  ],
+  buildings: {
+    A:{ total_units:119, electricity_kwh:98, water_m3:78, leaks_active:0 },
+    B:{ total_units:41,  electricity_kwh:35, water_m3:28, leaks_active:0 },
+    C:{ total_units:27,  electricity_kwh:22, water_m3:18, leaks_active:0 },
+  },
+  resort: { total_units:191, total_electricity_kwh:155, total_water_m3:124, active_leaks:0, solar_production_kw:18 },
+  leaks: [],
+};
+
+// Building A floor layout (floors 3-7, rooms per floor)
+const BLDG_A_FLOORS = [
+  { floor:3, rooms: Array.from({length:24}, (_,i)=>`A3${String(i+1).padStart(2,'0')}`) },
+  { floor:4, rooms: Array.from({length:24}, (_,i)=>`A4${String(i+1).padStart(2,'0')}`) },
+  { floor:5, rooms: Array.from({length:24}, (_,i)=>`A5${String(i+1).padStart(2,'0')}`) },
+  { floor:6, rooms: Array.from({length:24}, (_,i)=>`A6${String(i+1).padStart(2,'0')}`) },
+  { floor:7, rooms: Array.from({length:23}, (_,i)=>`A7${String(i+1).padStart(2,'0')}`) },
+];
+const BLDG_B_FLOORS = [
+  { floor:1, rooms: Array.from({length:8}, (_,i)=>`B1${String(i+1).padStart(2,'0')}`) },
+  { floor:2, rooms: Array.from({length:8}, (_,i)=>`B2${String(i+1).padStart(2,'0')}`) },
+  { floor:3, rooms: Array.from({length:8}, (_,i)=>`B3${String(i+1).padStart(2,'0')}`) },
+  { floor:4, rooms: Array.from({length:7}, (_,i)=>`B4${String(i+1).padStart(2,'0')}`) },
+  { floor:5, rooms: Array.from({length:6}, (_,i)=>`B5${String(i+1).padStart(2,'0')}`) },
+  { floor:6, rooms: Array.from({length:4}, (_,i)=>`B6${String(i+1).padStart(2,'0')}`) },
+];
+const BLDG_C_FLOORS = [
+  { floor:1, rooms: ["C102","C104","C106","C108"] },
+  { floor:2, rooms: ["C201","C202","C203","C204","C206","C208"] },
+  { floor:3, rooms: ["C301","C302","C303","C304","C306","C308"] },
+  { floor:4, rooms: ["C401","C402","C403","C404","C406","C408"] },
+  { floor:5, rooms: ["C501","C502","C503","C504","C506"] },
+];
+const VILLAS = ["V01","V02","V03","V04"];
+
+// ── Boot ─────────────────────────────────────────────────────────
+document.addEventListener("DOMContentLoaded", () => {
+  tickClock(); setInterval(tickClock, 1000);
+  buildSVG();
+  refreshAll();
+  setInterval(refreshAll, POLL_MS);
+  document.getElementById("input-form").addEventListener("submit", onSubmit);
+  initVoice();
+});
+
+function tickClock(){
+  document.getElementById("clock").textContent =
+    new Date().toLocaleTimeString("en-GB",{hour:"2-digit",minute:"2-digit",second:"2-digit"});
+}
+
+// ── Data fetch (backend or fallback) ─────────────────────────────
+async function refreshAll(){
+  await Promise.allSettled([fetchHealth(), fetchStatus(), fetchLeaks(), pollProactive()]);
+  updateMap();
+}
+
+async function fetchHealth(){
+  try{
+    const d=await(await fetch(`${API}/health`,{signal:AbortSignal.timeout(3000)})).json();
+    backendOnline=true;
+    const c=d.checks||{};
+    setPill("p-sim",c.simulator_running); setPill("p-db",c.db_connected); setPill("p-ai",c.api_key_configured);
+  }catch{
+    backendOnline=false;
+    setPill("p-sim",false); setPill("p-db",false); setPill("p-ai",false);
+    jitterSimData();
+  }
+}
+
+function setPill(id,ok){const e=document.getElementById(id);e.classList.toggle("ok",!!ok);e.classList.toggle("fail",!ok)}
+
+async function fetchStatus(){
+  if(!backendOnline) return;
+  try{
+    const d=(await(await fetch(`${API}/status`)).json()).data;
+    if(d.chillers) state.chillers=d.chillers;
+    if(d.buildings) state.buildings=d.buildings;
+    if(d.resort) state.resort=d.resort;
+  }catch{}
+}
+
+async function fetchLeaks(){
+  if(!backendOnline){ state.leaks=[]; return; }
+  try{
+    const d=await(await fetch(`${API}/leaks`)).json();
+    state.leaks=d.leaks||[];
+  }catch{ state.leaks=[]; }
+}
+
+// Simulate small data jitter when backend is offline
+function jitterSimData(){
+  for(const ch of state.chillers){
+    ch.cop = Math.max(3.2, ch.cop + (Math.random()-.5)*.08);
+    ch.power_kw = Math.max(20, ch.power_kw + (Math.random()-.5)*3);
+    ch.degraded = ch.cop < 3.5;
+  }
+  for(const b of Object.values(state.buildings)){
+    b.electricity_kwh = Math.max(5, b.electricity_kwh + (Math.random()-.5)*2);
+    b.water_m3 = Math.max(2, b.water_m3 + (Math.random()-.5)*1);
+  }
+  state.resort.solar_production_kw = Math.max(0, state.resort.solar_production_kw + (Math.random()-.5)*1);
+  // Randomly simulate a leak ~10% of the time
+  if(Math.random()<.1 && state.leaks.length===0){
+    const rooms=["A517","B204","C302"];
+    const r=rooms[Math.floor(Math.random()*rooms.length)];
+    state.leaks=[{room_id:r,building:r[0],flow_lph:Math.round(8+Math.random()*15)}];
+    state.buildings[r[0]].leaks_active=1;
+    state.resort.active_leaks=1;
+  } else if(Math.random()<.3 && state.leaks.length>0){
+    state.leaks=[];
+    for(const b of Object.values(state.buildings)) b.leaks_active=0;
+    state.resort.active_leaks=0;
+  }
+}
+
+// ── SVG Map ──────────────────────────────────────────────────────
+function buildSVG(){
+  const W=720, H=460;
+  const ns="http://www.w3.org/2000/svg";
+  const svg=document.createElementNS(ns,"svg");
+  svg.setAttribute("viewBox",`0 0 ${W} ${H}`);
+  svg.setAttribute("preserveAspectRatio","xMidYMid meet");
+
+  // Background zones
+  addRect(svg,0,0,W,H,"var(--bg)"); // base
+  addRect(svg,0,350,W,110,"","ocean"); // ocean south
+  addRect(svg,0,320,W,35,"","beach");  // beach strip
+
+  // ── Building A (west, large) ──
+  const aX=30, aY=30, aW=200, aH=250;
+  addRect(svg,aX-2,aY-2,aW+4,aH+4,"rgba(255,255,255,.02)","","",2);
+  addText(svg,aX,aY-6,"BUILDING A","bld-label");
+  addText(svg,aX+70,aY-6,"119 units · 5 floors","bld-sublabel");
+
+  BLDG_A_FLOORS.forEach((fl,fi)=>{
+    const fy=aY+fi*50;
+    addText(svg,aX-1,fy+8,`L${fl.floor}`,"zone-label");
+    fl.rooms.forEach((rid,ri)=>{
+      const rx=aX+14+ri*7.7, ry=fy, rw=7, rh=44;
+      const rect=addRect(svg,rx,ry,rw,rh,"","room-rect room-ok","",1);
+      rect.dataset.room=rid; rect.dataset.building="A";
+      rect.addEventListener("click",()=>onRoomClick(rid,"A"));
+    });
+  });
+
+  // ── Building B (center) ──
+  const bX=260, bY=50, bW=130, bH=220;
+  addRect(svg,bX-2,bY-2,bW+4,bH+4,"rgba(255,255,255,.02)","","",2);
+  addText(svg,bX,bY-6,"BUILDING B","bld-label");
+  addText(svg,bX+70,bY-6,"41 units","bld-sublabel");
+
+  BLDG_B_FLOORS.forEach((fl,fi)=>{
+    const fy=bY+fi*36;
+    addText(svg,bX-1,fy+8,`L${fl.floor}`,"zone-label");
+    fl.rooms.forEach((rid,ri)=>{
+      const rx=bX+14+ri*14, ry=fy, rw=13, rh=30;
+      const rect=addRect(svg,rx,ry,rw,rh,"","room-rect room-ok","",1);
+      rect.dataset.room=rid; rect.dataset.building="B";
+      rect.addEventListener("click",()=>onRoomClick(rid,"B"));
+    });
+  });
+
+  // ── Building C (east) ──
+  const cX=420, cY=50, cW=110, cH=220;
+  addRect(svg,cX-2,cY-2,cW+4,cH+4,"rgba(255,255,255,.02)","","",2);
+  addText(svg,cX,cY-6,"BUILDING C","bld-label");
+  addText(svg,cX+70,cY-6,"27 units","bld-sublabel");
+
+  BLDG_C_FLOORS.forEach((fl,fi)=>{
+    const fy=cY+fi*43;
+    addText(svg,cX-1,fy+8,`L${fl.floor}`,"zone-label");
+    fl.rooms.forEach((rid,ri)=>{
+      const rx=cX+14+ri*16, ry=fy, rw=14.5, rh=37;
+      const rect=addRect(svg,rx,ry,rw,rh,"","room-rect room-ok","",1);
+      rect.dataset.room=rid; rect.dataset.building="C";
+      rect.addEventListener("click",()=>onRoomClick(rid,"C"));
+    });
+  });
+
+  // ── Villas (beachfront west) ──
+  addText(svg,30,305,"VILLAS","bld-label");
+  VILLAS.forEach((vid,i)=>{
+    const vx=30+i*52, vy=312;
+    const rect=addRect(svg,vx,vy,46,28,"","villa-shape","",2);
+    rect.dataset.room=vid; rect.dataset.building="V";
+    rect.addEventListener("click",()=>onRoomClick(vid,"V"));
+    addText(svg,vx+10,vy+18,vid,"villa-label");
+  });
+
+  // ── Plant Room (chillers) ──
+  const pX=560, pY=160;
+  addText(svg,pX,pY-6,"PLANT ROOM","bld-label");
+  state.chillers.forEach((ch,i)=>{
+    const cy=pY+i*55;
+    const box=addRect(svg,pX,cy,140,48,"","chiller-box","",3);
+    box.dataset.chiller=ch.id;
+    box.addEventListener("click",()=>onChillerClick(ch.id));
+    addText(svg,pX+8,cy+14,ch.id,"chiller-label");
+    addText(svg,pX+8,cy+32,"","chiller-cop",`cop-${ch.id}`);
+    addText(svg,pX+70,cy+14,"Power","chiller-label");
+    addText(svg,pX+70,cy+32,"","chiller-label",`pw-${ch.id}`);
+    addText(svg,pX+115,cy+14,"Status","chiller-label");
+    addText(svg,pX+115,cy+28,"","chiller-label",`st-${ch.id}`);
+  });
+
+  // ── Solar (roof area) ──
+  addText(svg,560,30,"SOLAR ARRAY","bld-label");
+  for(let i=0;i<5;i++){
+    addRect(svg,560+i*28,40,25,30,"","solar-rect");
+    addText(svg,562+i*28,60,`INV-${i+1}`,"solar-label");
+  }
+  addText(svg,560,85,"","solar-label","solar-kw");
+
+  // ── Water mains (decorative) ──
+  const path=document.createElementNS(ns,"path");
+  path.setAttribute("d",`M${aX+100},${aY+aH} L${aX+100},${aY+aH+30} L${bX+60},${bY+bH+10} L${cX+50},${cY+cH+10}`);
+  path.setAttribute("class","water-line");
+  svg.appendChild(path);
+
+  // ── Ocean label ──
+  addText(svg,W/2-40,400,"GRACE BAY — ATLANTIC OCEAN","zone-label");
+
+  document.getElementById("map-wrap").appendChild(svg);
+}
+
+function addRect(svg,x,y,w,h,fill,cls,id,rx){
+  const ns="http://www.w3.org/2000/svg";
+  const r=document.createElementNS(ns,"rect");
+  r.setAttribute("x",x);r.setAttribute("y",y);r.setAttribute("width",w);r.setAttribute("height",h);
+  if(fill)r.setAttribute("fill",fill);
+  if(cls)r.setAttribute("class",cls);
+  if(id)r.id=id;
+  if(rx)r.setAttribute("rx",rx);
+  svg.appendChild(r);
+  return r;
+}
+
+function addText(svg,x,y,text,cls,id){
+  const ns="http://www.w3.org/2000/svg";
+  const t=document.createElementNS(ns,"text");
+  t.setAttribute("x",x);t.setAttribute("y",y);
+  if(cls)t.setAttribute("class",cls);
+  if(id)t.id=id;
+  t.textContent=text;
+  svg.appendChild(t);
+  return t;
+}
+
+// ── Update map colors ────────────────────────────────────────────
+function updateMap(){
+  const leakRooms=new Set(state.leaks.map(l=>l.room_id));
+
+  // Update room rectangles
+  document.querySelectorAll(".room-rect").forEach(rect=>{
+    const rid=rect.dataset.room;
+    rect.classList.remove("room-ok","room-alert","room-critical","room-offline");
+    if(leakRooms.has(rid)){
+      rect.classList.add("room-critical");
+    } else {
+      rect.classList.add("room-ok");
+    }
+  });
+
+  // Update chiller displays
+  state.chillers.forEach(ch=>{
+    const copEl=document.getElementById(`cop-${ch.id}`);
+    const pwEl=document.getElementById(`pw-${ch.id}`);
+    const stEl=document.getElementById(`st-${ch.id}`);
+    if(copEl){
+      copEl.textContent=`COP ${ch.cop.toFixed(2)}`;
+      copEl.classList.toggle("degraded",ch.degraded||ch.cop<3.5);
+      copEl.classList.toggle("chiller-cop",true);
+    }
+    if(pwEl) pwEl.textContent=`${ch.power_kw.toFixed(0)} kW`;
+    if(stEl){
+      stEl.textContent=ch.degraded?"DEGRADED":(ch.cop>0?"OK":"OFF");
+      stEl.style.fill=ch.degraded?"var(--red)":(ch.cop>0?"var(--green)":"var(--gray-dark)");
+    }
+  });
+
+  // Solar
+  const solarEl=document.getElementById("solar-kw");
+  if(solarEl) solarEl.textContent=`${state.resort.solar_production_kw?.toFixed(1)||"--"} kW total`;
+
+  // Stats
+  const statsEl=document.getElementById("map-stats");
+  if(statsEl){
+    const leaks=state.resort.active_leaks||0;
+    statsEl.textContent=`${state.resort.total_units||191} units · ${state.resort.total_electricity_kwh?.toFixed(0)||"--"} kWh · ${leaks} leak${leaks!==1?"s":""}`;
+  }
+}
+
+// ── Map click handlers ───────────────────────────────────────────
+function onRoomClick(roomId, building){
+  const leak=state.leaks.find(l=>l.room_id===roomId);
+  const bData=state.buildings[building]||{};
+  const tooltip=document.getElementById("map-tooltip");
+
+  if(leak){
+    tooltip.innerHTML=`<strong>${roomId}</strong> — Active leak detected · ${leak.flow_lph} L/h · Undetected 72h = $3,000-$8,000 damage`;
+  } else {
+    tooltip.innerHTML=`<strong>${roomId}</strong> — Building ${building} · All sensors nominal`;
+  }
+  tooltip.classList.add("show");
+  setTimeout(()=>tooltip.classList.remove("show"),5000);
+
+  // Also ask Daniela about this room
+  sendToDaniela(`Status of room ${roomId}?`);
+}
+
+function onChillerClick(chillerId){
+  const ch=state.chillers.find(c=>c.id===chillerId);
+  if(!ch) return;
+  const tooltip=document.getElementById("map-tooltip");
+  const status=ch.degraded?`DEGRADED — COP ${ch.cop.toFixed(2)} below 3.5 threshold`:`Operating normally — COP ${ch.cop.toFixed(2)}`;
+  tooltip.innerHTML=`<strong>${chillerId}</strong> — ${status} · ${ch.power_kw.toFixed(0)} kW`;
+  tooltip.classList.add("show");
+  setTimeout(()=>tooltip.classList.remove("show"),5000);
+
+  sendToDaniela(`Tell me about chiller ${chillerId}`);
+}
+
+// ── Proactive feed ───────────────────────────────────────────────
+async function pollProactive(){
+  // Try backend
+  if(backendOnline){
+    try{
+      const d=await(await fetch(`${API}/proactive`)).json();
+      const alerts=d.alerts||[];
+      for(const a of alerts){
+        if(knownAlertIds.has(a.id)) continue;
+        knownAlertIds.add(a.id);
+        hideEmpty();
+        appendAlert(a);
+        if(a.severity==="CRITICAL"||a.severity==="HIGH"){ playSound(); speakText(a.message); }
+      }
+    }catch{}
+  }
+
+  // On first load, try morning briefing
+  if(firstLoad){
+    firstLoad=false;
+    await loadBriefing();
+  }
+}
+
+async function loadBriefing(){
+  if(backendOnline){
+    try{
+      const d=await(await fetch(`${API}/briefing/latest`)).json();
+      if(d.briefing){ hideEmpty(); appendMsg({severity:"INFO",equipment:"Morning Briefing",message:d.briefing,timestamp:d.timestamp}); }
+    }catch{}
+  } else {
+    hideEmpty();
+    appendMsg({severity:"INFO",equipment:"Morning Briefing",
+      message:`Good afternoon. BCH-Villa Colony Resort is monitoring 191 units. Chiller plant: 3/3 active, average COP ${(state.chillers.reduce((s,c)=>s+c.cop,0)/3).toFixed(2)}. All systems nominal. Next scheduled maintenance window can proceed as planned.`,
+      timestamp:new Date().toISOString()});
+  }
+}
+
+function appendAlert(a){
+  const actions=extractActions(a.message);
+  appendMsg({severity:a.severity,equipment:a.equipment,message:a.message,timestamp:a.timestamp,alertId:a.id,actions});
+}
+
+function appendMsg({severity,equipment,message,timestamp,alertId,actions}){
+  const feed=document.getElementById("feed");
+  const div=document.createElement("div");
+  div.className=`msg sev-${severity}`;
+  const t=timestamp?new Date(timestamp).toLocaleTimeString("en-GB",{hour:"2-digit",minute:"2-digit"}):new Date().toLocaleTimeString("en-GB",{hour:"2-digit",minute:"2-digit"});
+
+  let html=`<div class="msg-meta"><span class="sev-chip ${severity}">${severity}</span><span style="font-weight:700;color:var(--text)">${esc(equipment)}</span><span>${t}</span></div><div class="msg-body">${esc(message)}</div>`;
+
+  if(actions&&actions.length){
+    html+=`<div class="msg-actions">${actions.map(a=>{
+      const bid=`a-${Math.random().toString(36).slice(2,7)}`;
+      return `<button class="act-btn" id="${bid}" onclick="confirmAct('${bid}','${alertId||''}')">${esc(a)}</button>`;
+    }).join("")}</div>`;
+  }
+  div.innerHTML=html;
+  feed.appendChild(div);
+  feed.scrollTop=feed.scrollHeight;
+}
+
+function extractActions(msg){
+  const acts=[];
+  for(const pat of [/Should I (.+?\?)/gi,/Shall I (.+?\?)/gi]){
+    let m; while((m=pat.exec(msg))!==null){
+      const l=m[1].replace(/\?$/,"").trim();
+      if(l.length>5&&l.length<80) acts.push(l.charAt(0).toUpperCase()+l.slice(1));
+    }
+  }
+  return acts;
+}
+
+async function confirmAct(bid,alertId){
+  const b=document.getElementById(bid); if(!b||b.classList.contains("done"))return;
+  b.classList.add("done"); b.textContent="Confirmed";
+  if(alertId&&backendOnline) try{await fetch(`${API}/proactive/${alertId}/acknowledge`,{method:"POST"})}catch{}
+  appendDaniela("Understood. I'll proceed and update you on progress.");
+}
+
+// ── Chat ─────────────────────────────────────────────────────────
+async function onSubmit(e){
+  e.preventDefault();
+  const input=document.getElementById("user-input");
+  const msg=input.value.trim(); if(!msg)return;
+  hideEmpty(); appendUser(msg); input.value="";
+  await sendToDaniela(msg);
+}
+
+async function sendToDaniela(msg){
+  const btn=document.getElementById("send-btn"); btn.disabled=true;
+  try{
+    if(backendOnline){
+      const r=await fetch(`${API}/chat`,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:msg,language:"en"})});
+      const d=await r.json();
+      appendDaniela(d.response); speakText(d.response);
+    } else {
+      appendDaniela("I'm currently operating in offline mode. Showing simulated data. Connect the backend for live intelligence.");
+    }
+  }catch{
+    appendDaniela("Connection interrupted. I'll retry on the next cycle.");
+  }finally{ btn.disabled=false; }
+}
+
+function appendUser(text){
+  hideEmpty();
+  const feed=document.getElementById("feed"), div=document.createElement("div");
+  div.className="msg from-user";
+  const t=new Date().toLocaleTimeString("en-GB",{hour:"2-digit",minute:"2-digit"});
+  div.innerHTML=`<div class="msg-meta"><span>You</span><span>${t}</span></div><div class="msg-body">${esc(text)}</div>`;
+  feed.appendChild(div); feed.scrollTop=feed.scrollHeight;
+}
+
+function appendDaniela(text){
+  const feed=document.getElementById("feed"), div=document.createElement("div");
+  div.className="msg from-daniela";
+  const t=new Date().toLocaleTimeString("en-GB",{hour:"2-digit",minute:"2-digit"});
+  const actions=extractActions(text);
+  let html=`<div class="msg-meta"><span style="font-weight:700;color:var(--text)">Daniela</span><span>${t}</span></div><div class="msg-body">${esc(text)}</div>`;
+  if(actions.length){
+    html+=`<div class="msg-actions">${actions.map(a=>{
+      const bid=`a-${Math.random().toString(36).slice(2,7)}`;
+      return `<button class="act-btn" id="${bid}" onclick="confirmAct('${bid}','')">${esc(a)}</button>`;
+    }).join("")}</div>`;
+  }
+  div.innerHTML=html;
+  feed.appendChild(div); feed.scrollTop=feed.scrollHeight;
+}
+
+// ── Helpers ──────────────────────────────────────────────────────
+function hideEmpty(){const e=document.getElementById("feed-empty");if(e)e.remove()}
+function esc(s){const d=document.createElement("div");d.textContent=s;return d.innerHTML}
+
+function playSound(){
+  try{
+    const ac=new(window.AudioContext||window.webkitAudioContext)();
+    const o=ac.createOscillator(),g=ac.createGain();
+    o.connect(g);g.connect(ac.destination);o.type="sine";
+    o.frequency.setValueAtTime(880,ac.currentTime);o.frequency.setValueAtTime(660,ac.currentTime+.15);
+    g.gain.setValueAtTime(.1,ac.currentTime);g.gain.exponentialRampToValueAtTime(.001,ac.currentTime+.5);
+    o.start(ac.currentTime);o.stop(ac.currentTime+.5);
+  }catch{}
+}
+
+// ── Voice ────────────────────────────────────────────────────────
+let recognition=null;
+function initVoice(){
+  const mic=document.getElementById("mic-btn");
+  const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+  if(!SR){mic.classList.add("unsupported");return}
+  recognition=new SR();recognition.lang="en-US";recognition.interimResults=false;
+  recognition.onresult=e=>{document.getElementById("user-input").value=e.results[0][0].transcript;document.getElementById("input-form").dispatchEvent(new Event("submit"))};
+  recognition.onend=()=>mic.classList.remove("listening");
+  recognition.onerror=()=>mic.classList.remove("listening");
+  mic.addEventListener("click",()=>{
+    if(mic.classList.contains("listening")){recognition.stop()}else{mic.classList.add("listening");recognition.start()}
+  });
+}
+function speakText(text){
+  if(!window.speechSynthesis)return;
+  const u=new SpeechSynthesisUtterance(text.substring(0,400));u.lang="en-US";u.rate=1;u.pitch=1;
+  window.speechSynthesis.speak(u);
+}
+</script>
+</body>
+</html>
